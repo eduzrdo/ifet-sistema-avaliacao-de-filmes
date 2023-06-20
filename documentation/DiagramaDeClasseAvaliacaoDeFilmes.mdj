@@ -992,7 +992,7 @@
 											"top": 62,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-id_filme: int",
+											"text": "-id: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1009,7 +1009,7 @@
 											"top": 77,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-titulo: string",
+											"text": "-title: string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1026,7 +1026,7 @@
 											"top": 92,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-imagem: string",
+											"text": "-imageUrl: string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1043,7 +1043,7 @@
 											"top": 107,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-mediaDeAvaliacoes: float",
+											"text": "-averageRating: float",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1060,7 +1060,7 @@
 											"top": 122,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-avaliacoes: Avaliacao[1..*]",
+											"text": "-ratings: Avaliacao[1..*]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1111,7 +1111,7 @@
 											"top": 160,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+getId_filme(): int",
+											"text": "+getId(): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1128,7 +1128,7 @@
 											"top": 175,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+getTitulo(): string",
+											"text": "+getTitle(): string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1145,7 +1145,7 @@
 											"top": 190,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+getImagem(): string",
+											"text": "+getImageUrl(): string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1162,7 +1162,7 @@
 											"top": 205,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+getMediaDeAvaliacoes(): float",
+											"text": "+getAverageRating(): float",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1179,7 +1179,7 @@
 											"top": 220,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+getAvaliacoes(): Avaliacao[0..*]",
+											"text": "+getRatings(): Avaliacao[0..*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1196,7 +1196,7 @@
 											"top": 235,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+setId_filme(id: int)",
+											"text": "+setId(id: int)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1213,7 +1213,7 @@
 											"top": 250,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "+adicionarAvaliacao(avaliacao: Avaliacao)",
+											"text": "+addRating(avaliacao: Avaliacao)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1230,7 +1230,7 @@
 											"top": 265,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-atualizarMediaDeAvaliacoes()",
+											"text": "-updateAverageRating()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1278,7 +1278,7 @@
 							"left": 600,
 							"top": 32,
 							"width": 389.462890625,
-							"height": 251,
+							"height": 266,
 							"nameCompartment": {
 								"$ref": "AAAAAAGIeZdAv4KhOgM="
 							},
@@ -1591,7 +1591,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 766,
-									"top": 370,
+									"top": 377,
 									"width": 26.380859375,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -1614,7 +1614,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 764,
-									"top": 370,
+									"top": 377,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1635,7 +1635,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 808,
-									"top": 371,
+									"top": 378,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1719,7 +1719,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 779,
-									"top": 302,
+									"top": 317,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -1739,7 +1739,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 765,
-									"top": 305,
+									"top": 320,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -1759,7 +1759,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 806,
-									"top": 298,
+									"top": 313,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -1808,7 +1808,7 @@
 								"$ref": "AAAAAAGIeZD4O4H7aT8="
 							},
 							"lineStyle": 1,
-							"points": "794:471;794:283",
+							"points": "794:471;794:298",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGIeZrWMIp9BB8="
@@ -2594,7 +2594,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 566,
-									"top": 166,
+									"top": 169,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2615,7 +2615,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 566,
-									"top": 181,
+									"top": 184,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2636,7 +2636,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 567,
-									"top": 136,
+									"top": 139,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2656,8 +2656,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 573,
-									"top": 165,
+									"left": 572,
+									"top": 169,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -2678,7 +2678,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 570,
-									"top": 179,
+									"top": 182,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2699,7 +2699,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 577,
-									"top": 138,
+									"top": 142,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -2720,7 +2720,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 561,
-									"top": 165,
+									"top": 169,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2739,8 +2739,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 564,
-									"top": 179,
+									"left": 563,
+									"top": 182,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2760,7 +2760,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 557,
-									"top": 138,
+									"top": 141,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2807,7 +2807,7 @@
 								"$ref": "AAAAAAGIeZdAv4KgCUs="
 							},
 							"lineStyle": 1,
-							"points": "599:157;536:157",
+							"points": "599:161;536:160",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGIebAWg67+oKA="
@@ -3809,7 +3809,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "id_filme",
+							"name": "id",
 							"visibility": "private",
 							"type": "int"
 						},
@@ -3819,7 +3819,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "titulo",
+							"name": "title",
 							"visibility": "private",
 							"type": "string"
 						},
@@ -3829,7 +3829,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "imagem",
+							"name": "imageUrl",
 							"visibility": "private",
 							"type": "string"
 						},
@@ -3839,7 +3839,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "mediaDeAvaliacoes",
+							"name": "averageRating",
 							"visibility": "private",
 							"type": "float"
 						},
@@ -3849,7 +3849,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "avaliacoes",
+							"name": "ratings",
 							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
@@ -3904,7 +3904,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "getId_filme",
+							"name": "getId",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3923,7 +3923,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "getTitulo",
+							"name": "getTitle",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3942,7 +3942,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "getImagem",
+							"name": "getImageUrl",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3961,7 +3961,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "getMediaDeAvaliacoes",
+							"name": "getAverageRating",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3980,7 +3980,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "getAvaliacoes",
+							"name": "getRatings",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4002,7 +4002,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "setId_filme",
+							"name": "setId",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4021,7 +4021,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "adicionarAvaliacao",
+							"name": "addRating",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4042,7 +4042,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
 							},
-							"name": "atualizarMediaDeAvaliacoes",
+							"name": "updateAverageRating",
 							"visibility": "private"
 						}
 					]
