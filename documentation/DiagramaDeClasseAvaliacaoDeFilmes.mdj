@@ -608,7 +608,7 @@
 											"top": 502,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-id_avaliacao: int",
+											"text": "-id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -625,7 +625,7 @@
 											"top": 517,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-usuario: Usuario",
+											"text": "-user: Usuario",
 											"horizontalAlignment": 0
 										},
 										{
@@ -642,7 +642,7 @@
 											"top": 532,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-filme: Filme",
+											"text": "-movie: Filme",
 											"horizontalAlignment": 0
 										},
 										{
@@ -659,7 +659,7 @@
 											"top": 547,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-nota: int",
+											"text": "-score: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -676,7 +676,7 @@
 											"top": 562,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-comentario: string",
+											"text": "-comment: string",
 											"horizontalAlignment": 0
 										}
 									],
@@ -727,7 +727,7 @@
 											"top": 600,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+getId_avaliacao(): int",
+											"text": "+getId(): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -744,7 +744,7 @@
 											"top": 615,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+getUsuario(): Usuario",
+											"text": "+getUser(): Usuario",
 											"horizontalAlignment": 0
 										},
 										{
@@ -761,7 +761,7 @@
 											"top": 630,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+getFilme(): Filme",
+											"text": "+getMovie(): Filme",
 											"horizontalAlignment": 0
 										},
 										{
@@ -778,7 +778,7 @@
 											"top": 645,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+getNota(): int",
+											"text": "+getScore(): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -795,7 +795,7 @@
 											"top": 660,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+getComentario(): string",
+											"text": "+getComment(): string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -812,7 +812,7 @@
 											"top": 675,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "+setId_avaliacao(id: int)",
+											"text": "+setId(id: int)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3544,9 +3544,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "id_avaliacao",
-							"visibility": "private",
-							"type": "int"
+							"name": "id",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3554,7 +3553,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "usuario",
+							"name": "user",
 							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
@@ -3566,7 +3565,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "filme",
+							"name": "movie",
 							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAGIeZdAvoKerGk="
@@ -3578,7 +3577,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "nota",
+							"name": "score",
 							"visibility": "private",
 							"type": "int"
 						},
@@ -3588,7 +3587,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "comentario",
+							"name": "comment",
 							"visibility": "private",
 							"type": "string"
 						}
@@ -3651,7 +3650,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "getId_avaliacao",
+							"name": "getId",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3670,7 +3669,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "getUsuario",
+							"name": "getUser",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3691,7 +3690,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "getFilme",
+							"name": "getMovie",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3712,7 +3711,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "getNota",
+							"name": "getScore",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3731,7 +3730,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "getComentario",
+							"name": "getComment",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3750,7 +3749,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
-							"name": "setId_avaliacao",
+							"name": "setId",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
