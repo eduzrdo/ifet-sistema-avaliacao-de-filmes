@@ -39,4 +39,14 @@ class System
     $serializado = serialize($this);
     file_put_contents(PATH . 'database.save', $serializado);
   }
+
+  function createUser($user)
+  {
+    $this->users[] = $user;
+
+    end($this->users);
+    $newId = key($this->users);
+
+    $user->setId($newId);
+  }
 }
