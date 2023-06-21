@@ -38,9 +38,9 @@ class Movies
     {
         return $this->ratings;
     }
-    function setId()
+    function setId($id)
     {
-        $this->id;
+        $this->id = $id;
     }
     function addRating($ratings)
     {
