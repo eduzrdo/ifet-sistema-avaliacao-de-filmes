@@ -189,7 +189,7 @@
 											"top": 488,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "-id_usuario: int",
+											"text": "-id: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -206,7 +206,7 @@
 											"top": 503,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "-nome: string",
+											"text": "-name: string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -240,7 +240,7 @@
 											"top": 533,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "-hash: string",
+											"text": "-passwordHash: string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -257,7 +257,7 @@
 											"top": 548,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "-avaliacoes: Avaliacao[0..*]",
+											"text": "-ratings: Avaliacao[0..*]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -343,7 +343,7 @@
 											"top": 603,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "+getNome(): string",
+											"text": "+getName(): string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -377,7 +377,7 @@
 											"top": 633,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "+getHash(): string",
+											"text": "+getPasswordHash(): string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -394,7 +394,7 @@
 											"top": 648,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "+getAvaliacoes(): Avaliacao[0..*]",
+											"text": "+getRatings(): Avaliacao[0..*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -411,7 +411,7 @@
 											"top": 663,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "+setId_usuario(id: int)",
+											"text": "+setId(id: int)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -428,7 +428,7 @@
 											"top": 678,
 											"width": 342.4560546875,
 											"height": 13,
-											"text": "+adicionarAvaliacao(avaliacao: Avaliacao)",
+											"text": "+addRating(avaliacao: Avaliacao)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3189,7 +3189,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "id_usuario",
+							"name": "id",
 							"visibility": "private",
 							"type": "int"
 						},
@@ -3199,7 +3199,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "nome",
+							"name": "name",
 							"visibility": "private",
 							"type": "string"
 						},
@@ -3219,7 +3219,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "hash",
+							"name": "passwordHash",
 							"visibility": "private",
 							"type": "string"
 						},
@@ -3229,7 +3229,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "avaliacoes",
+							"name": "ratings",
 							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
@@ -3329,7 +3329,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "getNome",
+							"name": "getName",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3367,7 +3367,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "getHash",
+							"name": "getPasswordHash",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3386,7 +3386,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "getAvaliacoes",
+							"name": "getRatings",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3408,7 +3408,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "setId_usuario",
+							"name": "setId",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -3427,7 +3427,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeWmIw4GPmmk="
 							},
-							"name": "adicionarAvaliacao",
+							"name": "addRating",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
