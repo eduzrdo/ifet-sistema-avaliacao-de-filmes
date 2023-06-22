@@ -9,9 +9,9 @@ $user1 = new User("Eduardo", "eduardoliveira.dev@gmail.com", "umasenhamuitoforto
 $movie1 = new Movie("Harry Potter e o Prisioneiro de Azkaban", "urlDaImagem", "sjdfkasd");
 $rating1 = new Rating($user1, $movie1, 5, "O melhor filme da saga!!");
 
-$system->createUser($user1);
-$system->createMovie($movie1);
-$system->createRating($rating1);
+// $system->createUser($user1);
+// $system->createMovie($movie1);
+// $system->createRating($rating1);
 
 echo '<pre>';
 
