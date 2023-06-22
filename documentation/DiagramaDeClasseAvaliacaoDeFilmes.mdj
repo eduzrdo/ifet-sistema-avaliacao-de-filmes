@@ -2028,7 +2028,7 @@
 											"top": 138,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+criarUsuario(usuario: Usuario)",
+											"text": "+createUser(usuario: Usuario)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2045,7 +2045,7 @@
 											"top": 153,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+criarFilme(filme: Filme)",
+											"text": "+createMovie(filme: Filme)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2062,7 +2062,7 @@
 											"top": 168,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+criarAvaliacao(avaliacao: Avaliacao)",
+											"text": "+createRating(avaliacao: Avaliacao)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2079,7 +2079,7 @@
 											"top": 183,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "-buscarUsuario(email: string): Usuario",
+											"text": "-findUser(email: string): Usuario",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2096,7 +2096,7 @@
 											"top": 198,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+autenticarUsuario(email: string, senha: string): Usuario",
+											"text": "+authUser(email: string, senha: string): Usuario",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2113,7 +2113,7 @@
 											"top": 213,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+buscarFilme(id_filme: int): Filme",
+											"text": "+findMovie(id_filme: int): Filme",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2148,7 +2148,7 @@
 											"top": 228,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+getUsuarios(): Usuario[0..*]",
+											"text": "+getUsers(): Usuario[0..*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2165,7 +2165,7 @@
 											"top": 243,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+getFilmes(): Filme[0..*]",
+											"text": "+getMovies(): Filme[0..*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2182,7 +2182,7 @@
 											"top": 258,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+getAvaliacoes(): Avaliacao[0..*]",
+											"text": "+getRatings(): Avaliacao[0..*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4085,7 +4085,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "criarUsuario",
+							"name": "createUser",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4106,7 +4106,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "criarFilme",
+							"name": "createMovie",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4127,7 +4127,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "criarAvaliacao",
+							"name": "createRating",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4148,7 +4148,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "buscarUsuario",
+							"name": "findUser",
 							"visibility": "private",
 							"parameters": [
 								{
@@ -4179,7 +4179,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "autenticarUsuario",
+							"name": "authUser",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4218,7 +4218,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "buscarFilme",
+							"name": "findMovie",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4256,7 +4256,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "getUsuarios",
+							"name": "getUsers",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4278,7 +4278,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "getFilmes",
+							"name": "getMovies",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4300,7 +4300,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGIeZ5uIJHQGWk="
 							},
-							"name": "getAvaliacoes",
+							"name": "getRatings",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
