@@ -26,10 +26,11 @@ class System
     if (file_exists(PATH . 'database.save')) {
       $data = file_get_contents(PATH . 'database.save');
       $system = unserialize($data);
+
       //Copia os dados para os atributos
-      $this->users = $system->users;
-      $this->movies = $system->movies;
-      $this->ratings = $system->ratings;
+      $this->users = $system->getUsers();
+      $this->movies = $system->getMovies();
+      $this->ratings = $system->getRatings();
     }
   }
 
@@ -38,5 +39,93 @@ class System
   {
     $serializado = serialize($this);
     file_put_contents(PATH . 'database.save', $serializado);
+  }
+
+  function getUsers()
+  {
+    return $this->users;
+  }
+
+  function getMovies()
+  {
+    return $this->movies;
+  }
+
+  function getRatings()
+  {
+    return $this->ratings;
+  }
+
+  function createUser($user)
+  {
+    $this->users[] = $user;
+
+    end($this->users);
+    $newId = key($this->users);
+
+    $user->setId($newId);
+  }
+
+  function createMovie($movie)
+  {
+    $this->movies[] = $movie;
+
+    end($this->movies);
+    $newId = key($this->movies);
+
+    $movie->setId($newId);
+  }
+
+  function createRating($rating)
+  {
+    $this->ratings[] = $rating;
+
+    end($this->ratings);
+    $newId = key($this->ratings);
+
+    $rating->setId($newId);
+  }
+
+  private function findUser($email)
+  {
+    foreach ($this->users as $user) {
+      if ($user->getEmail() === $email) {
+        return $user;
+      }
+    }
+
+    return null;
+  }
+
+  function authUser($email, $password)
+  {
+    $user = $this->findUser($email);
+
+    if (!$user) {
+      return [false, "E-mail não cadastrado."];
+    }
+
+    $verifiedPassword = password_verify($password, $user->getPasswordHash());
+
+    if ($verifiedPassword) {
+      return [true, [
+        "id" => $user->getId(),
+        "name" => $user->getName(),
+        "email" => $user->getEmail(),
+      ]];
+    }
+
+    return [false, "Senha incorreta."];
+  }
+
+  function findMovie($id)
+  {
+    foreach ($this->movies as $movie) {
+      if ($movie->getId() === $id) {
+        return [true, $movie];
+      }
+    }
+
+    return [false, "Filme com id $id não encontrado."];
   }
 }
