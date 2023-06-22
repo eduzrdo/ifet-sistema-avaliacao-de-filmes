@@ -1094,7 +1094,7 @@
 											"top": 145,
 											"width": 379.462890625,
 											"height": 13,
-											"text": "-__constructor(titulo: string, imagem: string, avaliacao: Avaliacao)",
+											"text": "-__constructor(titulo: string, imagem: string)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3867,17 +3867,6 @@
 									},
 									"name": "imagem",
 									"type": "string"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAGIkzVInpUNGIw=",
-									"_parent": {
-										"$ref": "AAAAAAGIkzJvP5RfY04="
-									},
-									"name": "avaliacao",
-									"type": {
-										"$ref": "AAAAAAGIeZD4OoH59Vg="
-									}
 								}
 							]
 						},
