@@ -26,10 +26,8 @@ class System
     if (file_exists(PATH . 'database.save')) {
       $data = file_get_contents(PATH . 'database.save');
       $system = unserialize($data);
+
       //Copia os dados para os atributos
-      // $this->users = $system->users;
-      // $this->movies = $system->movies;
-      // $this->ratings = $system->ratings;
       $this->users = $system->getUsers();
       $this->movies = $system->getMovies();
       $this->ratings = $system->getRatings();
