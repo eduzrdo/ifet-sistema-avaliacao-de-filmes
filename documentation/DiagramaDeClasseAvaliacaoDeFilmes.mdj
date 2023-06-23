@@ -608,7 +608,7 @@
 											"top": 502,
 											"width": 427.3623046875,
 											"height": 13,
-											"text": "-id",
+											"text": "-id: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3528,7 +3528,8 @@
 								"$ref": "AAAAAAGIeZD4OoH59Vg="
 							},
 							"name": "id",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",
