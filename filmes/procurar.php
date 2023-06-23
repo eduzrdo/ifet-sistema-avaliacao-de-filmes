@@ -25,6 +25,7 @@ $response = searchMovie($search);
         '<div class="movie-card">'
           . '<h3>' . $movie->title . '</h3>'
           . '<span>' . $movie->id . '</span>'
+          . '<img src="https://image.tmdb.org/t/p/w500' . $movie->poster_path . '" />'
           . '</div>';
       }
     } else {

@@ -32,3 +32,9 @@ body {
   font-size: 0.75rem;
   color: #585863;
 }
+
+.movie-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}

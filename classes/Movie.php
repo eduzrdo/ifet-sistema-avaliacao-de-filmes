@@ -1,5 +1,5 @@
 <?php
-class Movies
+class Movie
 {
     private $id;
     private $title;
@@ -7,11 +7,10 @@ class Movies
     private $averageRating;
     private $ratings = [];
 
-    function __construct($title, $imageUrl, $ratings)
+    function __construct($title, $imageUrl)
     {
         $this->title = $title;
         $this->imageUrl = $imageUrl;
-        $this->ratings = $ratings;
     }
 
     function getId()
