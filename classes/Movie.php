@@ -4,7 +4,7 @@ class Movie
     private $id;
     private $title;
     private $imageUrl;
-    private $averageRating;
+    private $averageScore;
     private $ratings = [];
 
     function __construct($title, $imageUrl)
@@ -28,26 +28,32 @@ class Movie
         return $this->imageUrl;
     }
 
-    function getAverageRating()
+    function getAverageScore()
     {
-        return $this->averageRating;
+        return $this->averageScore;
     }
 
     function getRatings()
     {
         return $this->ratings;
     }
+
     function setId($id)
     {
         $this->id = $id;
     }
+
     function addRating($ratings)
     {
         $this->ratings[] = $ratings;
-    }
-    private function updateAverageRating()
-    {
-        //implementar a função - conversa em grupo para definir!
-        return $this->id;
+
+        $sum = 0;
+
+        foreach ($this->ratings as $rating) {
+            $sum += $rating->getScore();
+        }
+        
+        $averageScore = $sum / count($this->ratings);
+        $this->averageScore = $averageScore;   
     }
 }
