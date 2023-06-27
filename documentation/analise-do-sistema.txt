@@ -31,3 +31,7 @@ PÁGINA DO USUÁRIO
 - alterar senha
 - mostrar avaliações
 =====================================
+
+
+pesquisou filme
+buscar no nosso banco de dados
