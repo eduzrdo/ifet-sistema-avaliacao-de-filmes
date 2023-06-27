@@ -5,9 +5,12 @@ require_once './classes/Movie.php';
 require_once './classes/Rating.php';
 $system = new System();
 
-// $user1 = new User("Eduardo", "eduardoliveira.dev@gmail.com", "umasenhamuitofortona");
-// $movie1 = new Movie("Harry Potter e o Prisioneiro de Azkaban", "urlDaImagem");
-// $rating1 = new Rating($user1, $movie1, 5, "O melhor filme da saga!!");
+$user1 = new User("Eduardo", "eduardoliveira.dev@gmail.com", "umasenhamuitofortona");
+$movie1 = new Movie("Harry Potter e o Prisioneiro de Azkaban", "urlDaImagem");
+$rating1 = new Rating($user1, $movie1, 3, "O melhor filme da saga!!");
+$rating2 = new Rating($user1, $movie1, 4, "O melhor filme da saga!!");
+
+echo $movie1->getAverageScore(); 
 
 // $system->createUser($user1);
 // $system->createMovie($movie1);
