@@ -59,12 +59,20 @@ class System
 
   function createUser($user)
   {
+    $systemUser = $this->findUser($user->getEmail());
+
+    if ($systemUser) {
+      return null;
+    }
+
     $this->users[] = $user;
 
     end($this->users);
     $newId = key($this->users);
 
     $user->setId($newId);
+
+    return $newId;
   }
 
   function createMovie($movie)
@@ -87,7 +95,7 @@ class System
     $rating->setId($newId);
   }
 
-  private function findUser($email)
+  public function findUser($email)
   {
     foreach ($this->users as $user) {
       if ($user->getEmail() === $email) {
