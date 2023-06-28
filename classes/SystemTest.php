@@ -27,6 +27,6 @@ class SystemTest extends TestCase
     $system->createUser($user1);
     $result = $system->createUser($user2);
 
-    $this->assertEquals(null, $result);
+    $this->assertEquals(false, $result[0]);
   }
 }
