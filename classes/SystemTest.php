@@ -15,7 +15,7 @@ class SystemTest extends TestCase
 
     $userInSystem = $system->findUser("user@email.com");
 
-    $this->assertEquals($user->getEmail(), $userInSystem->getEmail());
+    $this->assertEquals($user->getEmail(), $userInSystem[1]->getEmail());
   }
 
   function testFailToCreateUser()

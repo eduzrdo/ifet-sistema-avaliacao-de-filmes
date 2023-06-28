@@ -13,37 +13,37 @@ class Movie
         $this->imageUrl = $imageUrl;
     }
 
-    function getId()
+    public function getId()
     {
         return $this->id;
     }
 
-    function getTitle()
+    public function getTitle()
     {
         return $this->title;
     }
 
-    function getImageUrl()
+    public function getImageUrl()
     {
         return $this->imageUrl;
     }
 
-    function getAverageScore()
+    public function getAverageScore()
     {
         return $this->averageScore;
     }
 
-    function getRatings()
+    public function getRatings()
     {
         return $this->ratings;
     }
 
-    function setId($id)
+    public function setId($id)
     {
         $this->id = $id;
     }
 
-    function addRating($ratings)
+    public function addRating($ratings)
     {
         $this->ratings[] = $ratings;
 
@@ -52,8 +52,8 @@ class Movie
         foreach ($this->ratings as $rating) {
             $sum += $rating->getScore();
         }
-        
+
         $averageScore = $sum / count($this->ratings);
-        $this->averageScore = $averageScore;   
+        $this->averageScore = $averageScore;
     }
 }

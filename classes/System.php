@@ -42,27 +42,27 @@ class System
     file_put_contents(PATH . 'database.save', $serializado);
   }
 
-  function getUsers()
+  public function getUsers()
   {
     return $this->users;
   }
 
-  function getMovies()
+  public function getMovies()
   {
     return $this->movies;
   }
 
-  function getRatings()
+  public function getRatings()
   {
     return $this->ratings;
   }
 
-  function createUser($user)
+  public function createUser($user)
   {
     $systemUser = $this->findUser($user->getEmail());
 
-    if ($systemUser) {
-      return null;
+    if ($systemUser[0]) {
+      return [false, "E-mail já cadastrado."];
     }
 
     $this->users[] = $user;
@@ -72,10 +72,10 @@ class System
 
     $user->setId($newId);
 
-    return $newId;
+    return [true, $newId];
   }
 
-  function createMovie($movie)
+  public function createMovie($movie)
   {
     $this->movies[] = $movie;
 
@@ -85,7 +85,7 @@ class System
     $movie->setId($newId);
   }
 
-  function createRating($rating)
+  public function createRating($rating)
   {
     $this->ratings[] = $rating;
 
@@ -93,41 +93,47 @@ class System
     $newId = key($this->ratings);
 
     $rating->setId($newId);
+
+    $systemMovie = $this->findMovie($rating->getMovie()->getId());
+
+    if (!$systemMovie[0]) {
+      $this->movies[] = $rating->getMovie();
+    }
   }
 
   public function findUser($email)
   {
     foreach ($this->users as $user) {
       if ($user->getEmail() === $email) {
-        return $user;
+        return [true, $user];
       }
     }
 
-    return null;
+    return [false, null];
   }
 
-  function authUser($email, $password)
+  public function authUser($email, $password)
   {
-    $user = $this->findUser($email);
+    $systemUser = $this->findUser($email);
 
-    if (!$user) {
+    if (!$systemUser[0]) {
       return [false, "E-mail não cadastrado."];
     }
 
-    $verifiedPassword = password_verify($password, $user->getPasswordHash());
+    $verifiedPassword = password_verify($password, $systemUser[1]->getPasswordHash());
 
     if ($verifiedPassword) {
       return [true, [
-        "id" => $user->getId(),
-        "name" => $user->getName(),
-        "email" => $user->getEmail(),
+        "id" => $systemUser[1]->getId(),
+        "name" => $systemUser[1]->getName(),
+        "email" => $systemUser[1]->getEmail(),
       ]];
     }
 
     return [false, "Senha incorreta."];
   }
 
-  function findMovie($id)
+  public function findMovie($id)
   {
     foreach ($this->movies as $movie) {
       if ($movie->getId() === $id) {
@@ -138,7 +144,7 @@ class System
     return [false, "Esse filme ainda não possui avaliações. Seja o primeiro! 😁"];
   }
 
-  function searchMovie($search)
+  public function searchMovie($search)
   {
     $curl = curl_init();
     $search = urlencode($search);

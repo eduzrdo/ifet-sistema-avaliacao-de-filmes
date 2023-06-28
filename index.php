@@ -10,11 +10,26 @@ $movie1 = new Movie("Harry Potter e o Prisioneiro de Azkaban", "urlDaImagem");
 $rating1 = new Rating($user1, $movie1, 3, "O melhor filme da saga!!");
 $rating2 = new Rating($user1, $movie1, 4, "O melhor filme da saga!!");
 
-echo $movie1->getAverageScore(); 
+echo $movie1->getAverageScore();
 
-// $system->createUser($user1);
+$system->createUser($user1);
 // $system->createMovie($movie1);
 // $system->createRating($rating1);
+
+$result = $system->findUser("eduardoliveira.dev@gmail.com");
+
+echo '<pre>';
+var_dump($user1->getEmail());
+echo '</pre>';
+
+echo '<pre>';
+var_dump($result[1]->getEmail());
+echo '</pre>';
+
+echo '<pre>';
+var_dump($user1->getEmail() == $result[1]->getEmail());
+echo '</pre>';
+
 ?>
 
 <!DOCTYPE html>
@@ -31,25 +46,6 @@ echo $movie1->getAverageScore();
         <input type="text" name="search" placeholder="Procurar filme">
         <button type="submit">Procurar</button>
     </form>
-
-    <?php
-    $data = [5, 4, 3, 2, 1];
-    ?>
-
-
-    <script>
-        const data = [];
-
-        <?php
-        foreach ($data as $value) {
-        ?> data.push(<?php echo $value; ?>) <?php
-                                        }
-                                            ?>
-
-            console.log('Lista:');
-
-            console.log(data);
-    </script>
 </body>
 
 </html>

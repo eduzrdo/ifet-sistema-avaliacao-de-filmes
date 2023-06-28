@@ -2045,7 +2045,7 @@
 											"top": 153,
 											"width": 430.00927734375,
 											"height": 13,
-											"text": "+createUser(usuario: Usuario)",
+											"text": "+createUser(usuario: Usuario): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4133,6 +4133,15 @@
 									"type": {
 										"$ref": "AAAAAAGIeWmIw4GPmmk="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGI/z3mcCrxl14=",
+									"_parent": {
+										"$ref": "AAAAAAGIebSGOryViYA="
+									},
+									"type": "int",
+									"direction": "return"
 								}
 							]
 						},
