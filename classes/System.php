@@ -83,6 +83,8 @@ class System
     $newId = key($this->movies);
 
     $movie->setId($newId);
+
+    return $newId;
   }
 
   public function createRating($rating)
@@ -96,8 +98,8 @@ class System
 
     $systemMovie = $this->findMovie($rating->getMovie()->getId());
 
-    if (!$systemMovie[0]) {
-      $this->movies[] = $rating->getMovie();
+    if ($systemMovie[0] === false) {
+      $this->createMovie($rating->getMovie());
     }
   }
 
