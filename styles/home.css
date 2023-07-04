@@ -1,0 +1,107 @@
+body {
+    height: 100vh;
+}
+
+p {
+    color: white;
+}
+
+.backgroundIMG {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to left , transparent 0%, rgb(0, 0, 0) 90%), url("../Image/backgroundTest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.navigation p {
+    margin: 3%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.content p {
+    margin: 0.5%;
+}
+
+.content button {
+    width: 10%;
+}
+
+.genres {
+    display: flex;
+    flex-direction: row;
+}
+
+/*decoration*/
+.logo,
+.content h1 {
+    font-size: 35px;
+    color: var(--primary);
+}
+
+.navigation p:hover {
+    color: var(--primary);
+}
+
+button {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+
+    border-radius: 4px;
+    background: var(--primary-dark);
+
+    border: none;
+
+    color: #FFF;
+    font-size: 14px;
+    font-family: 'roboto-medium';
+}
+button:hover{
+    background:var(--primary) ;
+}
+
+/*carrosel*/
+.carousel {
+    position: absolute;
+    box-shadow:  2px 2px 4px black ;
+    height: 200px;
+    width: 100%;
+    gap: 3rem;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    bottom: 0;
+}
+.carousel img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel img:hover{
+
+}
