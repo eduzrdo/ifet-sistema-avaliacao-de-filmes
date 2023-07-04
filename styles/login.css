@@ -1,0 +1,16 @@
+button {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+
+  border-radius: 4px;
+  background: var(--primary);
+
+  border: none;
+
+  color: #FFF;
+  font-size: 14px;
+  font-family: 'roboto-medium';
+}
