@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <?php include 'components/header.php' ?>
+  <?php include 'components/Header.php' ?>
 
   <main>
     <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Poster de Interestelar">
