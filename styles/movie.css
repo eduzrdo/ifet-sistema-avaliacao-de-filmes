@@ -6,9 +6,50 @@ body {
   background-color: var(--primary-darkest);
 }
 
-body > *:not(header) {
+body > :not(header) {
   max-width: 1140px;
   padding: 0 6rem;
   margin: 0 auto;
   box-sizing: content-box;
+}
+
+main {
+  display: flex;
+  gap: 2rem;
+}
+
+main img {
+  height: 14rem;
+  border-radius: 0.5rem;
+}
+
+main .movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+main .movie-info .stars {
+  display: flex;
+  gap: 0.5rem;
+
+  color: var(--primary);
+}
+
+main .movie-info div i {
+  font-size: 1.25rem;
+}
+
+main .movie-info .score {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6.25rem;
+  background-color: var(--primary);
+  color: var(--primary-darkest);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
 }
