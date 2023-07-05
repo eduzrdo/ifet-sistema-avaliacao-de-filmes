@@ -24,16 +24,25 @@
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--primary-light);
 }
 
 :root {
-  --primary: #13C6B2;
+  --primary-light: #3cffe8;
+  --primary: #0FDFC8;
   --primary-dark: #104847;
   --primary-darkest: #0F1219;
 
   --white: #FFFFFF;
   --gray-light: #EBEBEB;
+}
+
+body {
+  color: var(--gray-light);
 }
 
 body, button, input, textarea {
@@ -56,8 +65,6 @@ body, button, input, textarea {
 }
 
 .body-text {
-  color: var(--gray-light);
-
   /* body-text - body | p */
   font-size: 0.875rem;
   line-height: 160%;
@@ -95,4 +102,60 @@ body, button, input, textarea {
   /* nav-text - li */
   font-size: 1rem;
   line-height: 160%;
+}
+
+header {
+  border-bottom: 1px solid var(--primary);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  max-width: 1140px;
+  padding: 0 6rem;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+header nav > * {
+  flex: 1;
+}
+
+header nav .logo img {
+  width: 5.75rem;
+  height: 2.25rem;
+}
+
+header nav .navigation-menu {
+  display: flex;
+  justify-content: center;
+
+  list-style: none;
+}
+
+header nav .buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+header nav .buttons .icon-button {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6.25rem;
+  background: var(--primary);
+  color: var(--primary-darkest);
+}
+
+header nav .buttons .search-button {
+
+}
+
+header nav .buttons .icon-button {
+
 }
