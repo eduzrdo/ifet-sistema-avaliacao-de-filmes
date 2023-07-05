@@ -1,4 +1,4 @@
-<header>
+<header class="page-header">
   <nav>
     <div class="logo">
       <img src="assets/starfilms-logo.svg" alt="Logo StarFilms">
