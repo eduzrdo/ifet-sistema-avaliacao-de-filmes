@@ -30,7 +30,7 @@ body {
   border: 1px solid black;
 }
 
-body > :not(.navigation-header):not(.background-plane) {
+body > :not(.page-header):not(.background-plane) {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
