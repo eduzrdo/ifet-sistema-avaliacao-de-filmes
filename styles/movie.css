@@ -28,13 +28,6 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--primary-darkest) 100%);
 }
 
-body > :not(.page-header):not(.background-plane) {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  z-index: 10;
-}
-
 main {
   display: flex;
   gap: 2rem;

@@ -12,6 +12,8 @@
 
 <body>
   <?php require_once 'components/Header.php' ?>
+
+  <h1>asdfalsdj</h1>
 </body>
 
 </html>

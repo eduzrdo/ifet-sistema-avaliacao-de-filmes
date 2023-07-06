@@ -49,6 +49,13 @@ body {
   background-color: var(--primary-darkest);
 }
 
+body > :not(.page-header):not(.background-plane) {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
 body, button, input, textarea {
   color: var(--gray-light);
   font-family: Roboto, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
