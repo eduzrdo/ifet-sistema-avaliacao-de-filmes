@@ -14,41 +14,65 @@
 </head>
 
 <body>
+  <div class="background-plane">
+    <img class="" src="https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" alt="Plano de fundo d Interestelar">
+
+    <div></div>
+  </div>
+
   <?php include 'components/Header.php' ?>
 
   <main>
-    <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Poster de Interestelar">
+    <img src="https://image.tmdb.org/t/p/w300/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Poster de Interestelar">
 
-    <div>
+    <div class="movie-info">
       <h1 class="title">Interestelar</h1>
 
-      <div>
+      <div class="stars">
         <i class="ph-fill ph-star"></i>
         <i class="ph-fill ph-star"></i>
         <i class="ph-fill ph-star"></i>
         <i class="ph-fill ph-star"></i>
         <i class="ph ph-star"></i>
-        <span>4.9</span>
+        <span class="score button-text">4.9</span>
       </div>
 
-      <p class="body-text">No terceiro ano de Harry em Hogwarts, um perigoso prisioneiro chamado Sirius Black escapa de Azkaban. Enquanto Harry enfrenta seus medos e descobre a verdade sobre Black, ele lida com os Dementadores, traições e revelações surpreendentes. Com a ajuda de seus amigos e um novo professor, Harry enfrenta desafios emocionantes e uma batalha épica. Prepare-se para uma aventura cheia de magia e perigo em "Harry Potter e o Prisioneiro de Azkaban".</p>
+      <p class="body-text">Interestelar é uma obra-prima cinematográfica que transcende as fronteiras do espaço e tempo. Com uma narrativa envolvente e personagens cativantes, o filme nos leva a uma jornada emocionante através de buracos negros e dimensões desconhecidas, enquanto explora temas profundos como amor, sacrifício e a busca incansável pela sobrevivência da humanidade. Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
     </div>
   </main>
 
-  <form action="">
-    <textarea name="comment" id="" cols="30" rows="10"></textarea>
-
-    <div>
-      <button>AVALIAR</button>
-      <button>APAGAR</button>
-    </div>
-  </form>
-
   <div>
-    <h2>Avaliações</h2>
+    <form action="">
+      <textarea class="input-text" name="comment" id="" cols="30" rows="5" placeholder="Escreva um avaliação sobre o filme"></textarea>
 
-    <div>
+      <div>
+        <button class="button-primary">AVALIAR</button>
+        <button class="button-secondary">APAGAR</button>
+      </div>
+    </form>
+  </div>
 
+  <div class="ratings-container">
+    <h2 class="subtitle">Avaliações</h2>
+
+    <div class="rating-list">
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
+
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
+
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
     </div>
   </div>
 </body>
