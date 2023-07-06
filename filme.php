@@ -14,6 +14,12 @@
 </head>
 
 <body>
+  <div class="background-plane">
+    <img class="" src="https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" alt="Plano de fundo d Interestelar">
+
+    <div></div>
+  </div>
+
   <?php include 'components/Header.php' ?>
 
   <main>
@@ -35,20 +41,38 @@
     </div>
   </main>
 
-  <form action="">
-    <textarea name="comment" id="" cols="30" rows="10"></textarea>
-
-    <div>
-      <button class="button-primary">AVALIAR</button>
-      <button>APAGAR</button>
-    </div>
-  </form>
-
   <div>
-    <h2>Avaliações</h2>
+    <form action="">
+      <textarea class="input-text" name="comment" id="" cols="30" rows="5" placeholder="Escreva um avaliação sobre o filme"></textarea>
 
-    <div>
+      <div>
+        <button class="button-primary">AVALIAR</button>
+        <button class="button-secondary">APAGAR</button>
+      </div>
+    </form>
+  </div>
 
+  <div class="ratings-container">
+    <h2 class="subtitle">Avaliações</h2>
+
+    <div class="rating-list">
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
+
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
+
+      <div class="rating">
+        <h3 class="body-text-bold">Zé das Couve</h3>
+        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+        <span class="body-text-small">05/07/2023 - 09:06</span>
+      </div>
     </div>
   </div>
 </body>
