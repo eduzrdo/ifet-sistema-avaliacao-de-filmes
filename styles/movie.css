@@ -3,7 +3,6 @@ body {
   flex-direction: column;
   gap: 3rem;
   min-height: 100vh;
-  background-color: var(--primary-darkest);
   padding-bottom: 2rem;
 }
 

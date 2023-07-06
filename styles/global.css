@@ -46,6 +46,7 @@ a:hover {
 
 body {
   color: var(--gray-light);
+  background-color: var(--primary-darkest);
 }
 
 body, button, input, textarea {
