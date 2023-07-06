@@ -32,14 +32,10 @@ function searchMovie($search)
 
 function getMovieFromApi($movieId)
 {
-  echo '<pre>';
-  var_dump($movieId);
-  echo '</pre>';
-
   $curl = curl_init();
 
   curl_setopt_array($curl, [
-    CURLOPT_URL => "https://api.themoviedb.org/3/movie/' . $movieId . '?language=pt-BR",
+    CURLOPT_URL => "https://api.themoviedb.org/3/movie/$movieId?language=pt-BR",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -54,17 +50,11 @@ function getMovieFromApi($movieId)
 
   $response = curl_exec($curl);
   $data = json_decode($response);
-  $err = curl_error($curl);
-
-  echo '<pre>';
-  var_dump($data);
-  echo '</pre>';
-
 
   curl_close($curl);
 
   if (isset($data->success) && $data->success === false) {
-    return [false, "Filme não encontrado.."];
+    return [false, "Filme não encontrado."];
   } else {
     return [true, $data];
   }
