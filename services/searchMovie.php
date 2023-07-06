@@ -29,3 +29,43 @@ function searchMovie($search)
     return [true, $data];
   }
 }
+
+function getMovieFromApi($movieId)
+{
+  echo '<pre>';
+  var_dump($movieId);
+  echo '</pre>';
+
+  $curl = curl_init();
+
+  curl_setopt_array($curl, [
+    CURLOPT_URL => "https://api.themoviedb.org/3/movie/' . $movieId . '?language=pt-BR",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => [
+      "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYTQ4ZmY3YWE5NmRlYjRlYThmY2YzNTAyZjU0NTU0NiIsInN1YiI6IjYxZDNhNWUwYTIyZDNlMDA2N2IyYzExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aSJXpzlW6gZKBuYMOjCl3Ziy_6WbYz0WiMrSW31xKtQ",
+      "accept: application/json"
+    ],
+  ]);
+
+  $response = curl_exec($curl);
+  $data = json_decode($response);
+  $err = curl_error($curl);
+
+  echo '<pre>';
+  var_dump($data);
+  echo '</pre>';
+
+
+  curl_close($curl);
+
+  if (isset($data->success) && $data->success === false) {
+    return [false, "Filme não encontrado.."];
+  } else {
+    return [true, $data];
+  }
+}

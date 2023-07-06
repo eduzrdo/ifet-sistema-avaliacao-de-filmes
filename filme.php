@@ -1,3 +1,11 @@
+<?php
+require_once 'services/searchMovie.php';
+
+$movieId = 338953;
+
+getMovieFromApi($movieId);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
