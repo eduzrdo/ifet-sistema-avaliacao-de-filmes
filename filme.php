@@ -1,3 +1,17 @@
+<?php
+require_once 'services/searchMovie.php';
+require_once 'utils/movie.php';
+
+// $movieId = 338953;
+$movieId = 22;
+
+$movie = getMovieFromApi($movieId);
+
+// echo '<pre>';
+// var_dump($movie);
+// echo '</pre>';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,12 +24,12 @@
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/movie.css">
 
-  <title>Avaliações - Interestelar</title>
+  <title>Avaliações - <?php echo $movie[1]->title; ?></title>
 </head>
 
 <body>
   <div class="background-plane">
-    <img class="" src="https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" alt="Plano de fundo d Interestelar">
+    <img class="" src="<?php echo makeMovieBackdropPath($movie[1]->backdrop_path); ?>" alt="Plano de fundo de <?php echo $movie[1]->title; ?>">
 
     <div></div>
   </div>
@@ -23,10 +37,10 @@
   <?php include 'components/Header.php' ?>
 
   <main>
-    <img src="https://image.tmdb.org/t/p/w300/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Poster de Interestelar">
+    <img src="<?php echo makeMoviePoster($movie[1]->poster_path); ?>" alt="Poster de Interestelar">
 
     <div class="movie-info">
-      <h1 class="title">Interestelar</h1>
+      <h1 class="title"><?php echo $movie[1]->title; ?></h1>
 
       <div class="stars">
         <i class="ph-fill ph-star"></i>
@@ -37,7 +51,9 @@
         <span class="score button-text">4.9</span>
       </div>
 
-      <p class="body-text">Interestelar é uma obra-prima cinematográfica que transcende as fronteiras do espaço e tempo. Com uma narrativa envolvente e personagens cativantes, o filme nos leva a uma jornada emocionante através de buracos negros e dimensões desconhecidas, enquanto explora temas profundos como amor, sacrifício e a busca incansável pela sobrevivência da humanidade. Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
+      <p class="body-text">
+        <?php echo $movie[1]->overview ?>
+      </p>
     </div>
   </main>
 
