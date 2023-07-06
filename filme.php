@@ -2,7 +2,8 @@
 require_once 'services/searchMovie.php';
 require_once 'utils/movie.php';
 
-$movieId = 338953;
+// $movieId = 338953;
+$movieId = 22;
 
 $movie = getMovieFromApi($movieId);
 
