@@ -12,10 +12,15 @@
 </head>
 
 <body>
-  <label>
-    <input type="email" name="" id="">
-  </label>
-  <button>ENTRAR</button>
+  <div>
+    <form action="" class="login-form">
+      <input type="text" class="input-text" placeholder="email@email.com">
+      <input type="password" class="input-passowrd" placeholder="**********">
+
+      <button class="button-primary">ENTRAR</button>
+      <a href="">CADASTRE-SE</a>
+    </form>
+  </div>
 </body>
 
 </html>
