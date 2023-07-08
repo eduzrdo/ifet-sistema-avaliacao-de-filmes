@@ -160,6 +160,14 @@ header.page-header nav .navigation-menu {
   list-style: none;
 }
 
+header.page-header nav .navigation-menu a {
+  color: var(--gray-light);
+}
+
+header.page-header nav .navigation-menu a:hover {
+  color: var(--white);
+}
+
 header.page-header nav .buttons {
   display: flex;
   justify-content: flex-end;

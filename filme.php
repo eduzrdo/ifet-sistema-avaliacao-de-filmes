@@ -34,7 +34,7 @@ $movie = getMovieFromApi($movieId);
     <div></div>
   </div>
 
-  <?php include 'components/Header.php' ?>
+  <?php require_once 'components/Header.php' ?>
 
   <main>
     <img src="<?php echo makeMoviePoster($movie[1]->poster_path); ?>" alt="Poster de Interestelar">
