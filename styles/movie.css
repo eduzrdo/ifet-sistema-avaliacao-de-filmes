@@ -51,11 +51,11 @@ main .movie-info .stars {
   color: var(--primary);
 }
 
-main .movie-info div i {
+main .movie-info .stars i {
   font-size: 1.25rem;
 }
 
-main .movie-info .score {
+main .movie-info .stars .score {
   padding: 0.25rem 0.5rem;
   border-radius: 6.25rem;
   background-color: var(--primary);
@@ -66,6 +66,27 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+form .form-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form .score-selection {
+  display: flex;
+  gap: 0.75rem;
+}
+
+form .score-selection label input {
+  display: none;
+}
+
+form .score-selection i {
+  color: var(--primary);
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 form textarea {
@@ -85,7 +106,7 @@ form textarea:focus {
   box-shadow: inset 0px 0px 0px 2px var(--primary);
 }
 
-form div {
+form .form-buttons {
   display: flex;
   gap: 1.25rem;
 }

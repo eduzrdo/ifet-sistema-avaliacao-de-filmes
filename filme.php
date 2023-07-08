@@ -59,9 +59,36 @@ $movie = getMovieFromApi($movieId);
 
   <div>
     <form action="">
-      <textarea class="input-text" name="comment" id="" cols="30" rows="5" placeholder="Escreva um avaliação sobre o filme"></textarea>
+      <div class="form-stars">
+        <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 
-      <div>
+        <div class="score-selection">
+          <label>
+            <input type="radio" name="score" value="1" class="star-input" required>
+            <i class="ph ph-star"></i>
+          </label>
+          <label>
+            <input type="radio" name="score" value="2" class="star-input">
+            <i class="ph ph-star"></i>
+          </label>
+          <label>
+            <input type="radio" name="score" value="3" class="star-input">
+            <i class="ph ph-star"></i>
+          </label>
+          <label>
+            <input type="radio" name="score" value="4" class="star-input">
+            <i class="ph ph-star"></i>
+          </label>
+          <label>
+            <input type="radio" name="score" value="5" class="star-input">
+            <i class="ph ph-star"></i>
+          </label>
+        </div>
+      </div>
+
+      <textarea class="input-text" name="comment" id="" cols="30" rows="5" placeholder="Escreva um avaliação sobre o filme" required></textarea>
+
+      <div class="form-buttons">
         <button class="button-primary">AVALIAR</button>
         <button class="button-secondary">APAGAR</button>
       </div>
@@ -91,6 +118,8 @@ $movie = getMovieFromApi($movieId);
       </div>
     </div>
   </div>
+
+  <script src="scripts/movie.js"></script>
 </body>
 
 </html>
