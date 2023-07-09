@@ -22,7 +22,7 @@ $movie = getMovieFromApi($movieId);
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/movie.css">
+  <link rel="stylesheet" href="styles/filme.css">
 
   <title>Avaliações - <?php echo $movie[1]->title; ?></title>
 </head>
@@ -100,21 +100,45 @@ $movie = getMovieFromApi($movieId);
 
     <div class="rating-list">
       <div class="rating">
-        <h3 class="body-text-bold">Zé das Couve</h3>
+        <div>
+          <h3 class="body-text-bold">Zé das Couve</h3>
+          <div class="rating-score">
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+          </div>
+        </div>
         <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small">05/07/2023 - 09:06</span>
+        <span class="body-text-small date">05/07/2023 - 09:06</span>
       </div>
 
       <div class="rating">
-        <h3 class="body-text-bold">Zé das Couve</h3>
+        <div>
+          <h3 class="body-text-bold">Zé das Couve</h3>
+          <div class="rating-score">
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+          </div>
+        </div>
         <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small">05/07/2023 - 09:06</span>
+        <span class="body-text-small date">05/07/2023 - 09:06</span>
       </div>
 
       <div class="rating">
-        <h3 class="body-text-bold">Zé das Couve</h3>
+        <div>
+          <h3 class="body-text-bold">Zé das Couve</h3>
+          <div class="rating-score">
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+          </div>
+        </div>
         <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small">05/07/2023 - 09:06</span>
+        <span class="body-text-small date">05/07/2023 - 09:06</span>
       </div>
     </div>
   </div>

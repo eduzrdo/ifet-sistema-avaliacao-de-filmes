@@ -132,10 +132,27 @@ form .form-buttons {
   background-color: var(--primary-darker);
 }
 
+.ratings-container .rating > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .ratings-container .rating h3 {
   color: var(--primary);
 }
 
-.ratings-container .rating span {
+.ratings-container .rating .rating-score {
+  display: flex;
+  gap: 0.25rem;
+}
 
+.ratings-container .rating .rating-score i {
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.ratings-container .rating span.date {
+  color: var(--white);
+  opacity: 0.5;
 }
