@@ -1,9 +1,16 @@
 <?php
 require_once 'services/searchMovie.php';
+require_once 'classes/System.php';
 require_once 'utils/movie.php';
 
-// $movieId = 338953;
-$movieId = 22;
+$movieId = $_GET['movieId'];
+
+// $movieId = 338953; // Animais Fantásticos: Os Segredos de Dumbledore
+// $movieId = 22; // Piratas do Caribe: A Maldição do Pérola Negra
+// $movieId = 177572; // Operação Big Hero (Big Hero 6)
+// $movieId = 671; // Harry Potter e a Pedra Filosofal
+// $movieId = 673; // Harry Potter e o Prisioneiro de Azkaban
+// $movieId = 675; // Harry Potter e a Ordem da Fênix
 
 $movie = getMovieFromApi($movieId);
 
