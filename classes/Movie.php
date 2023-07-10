@@ -3,14 +3,17 @@ class Movie
 {
     private $id;
     private $title;
-    private $imageUrl;
+    private $posterPath;
+    private $backdropPath;
     private $averageScore;
     private $ratings = [];
 
-    function __construct($title, $imageUrl)
+    function __construct($id, $title, $posterPath, $backdropPath)
     {
+        $this->id = $id;
         $this->title = $title;
-        $this->imageUrl = $imageUrl;
+        $this->posterPath = $posterPath;
+        $this->backdropPath = $backdropPath;
     }
 
     public function getId()
@@ -23,9 +26,14 @@ class Movie
         return $this->title;
     }
 
-    public function getImageUrl()
+    function getPosterPath()
     {
-        return $this->imageUrl;
+        return $this->posterPath;
+    }
+
+    function getBackdropPath()
+    {
+        return $this->backdropPath;
     }
 
     public function getAverageScore()
@@ -38,14 +46,9 @@ class Movie
         return $this->ratings;
     }
 
-    public function setId($id)
+    public function addRating($rating)
     {
-        $this->id = $id;
-    }
-
-    public function addRating($ratings)
-    {
-        $this->ratings[] = $ratings;
+        $this->ratings[] = $rating;
 
         $sum = 0;
 

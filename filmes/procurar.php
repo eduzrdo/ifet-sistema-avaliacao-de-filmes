@@ -1,5 +1,5 @@
 <?php
-require_once '../services/searchMovie.php';
+require_once '../services/movie.php';
 
 $search = $_GET['search'];
 

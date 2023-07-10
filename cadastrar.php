@@ -8,17 +8,23 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/login.css">
 
-  <title>Cadastro - </title>
+  <title>Cadastrar | StarFilms</title>
 </head>
 
 <body>
-  <form action="" class="login-form">
-    <input type="text" class="input-text" placeholder="email@email.com">
-    <input type="password" class="input-passowrd" placeholder="digite uma senha">
-    <input type="password" class="input-passowrd" placeholder="confirme a senha">
+  <form action="api/user/register.php" class="login-form" method="post">
+    <input type="text" name="email" class="input-text" placeholder="email@email.com">
+    <input type="password" name="password" class="input-passowrd" placeholder="digite uma senha">
+    <input type="password" name="confirmPassword" class="input-passowrd" placeholder="confirme a senha">
+
+    <?php
+    if (isset($_COOKIE['registerError'])) {
+      echo "<span class='error'>" . $_COOKIE['registerError'] . "</span>";
+    }
+    ?>
 
     <button class="button-primary">CADASTRAR</button>
-    <p>JÁ POSSUI CADASTRO?</p><a href="">ENTRE AQUI</a>
+    <p>JÁ POSSUI CADASTRO?</p><a href="login.php">ENTRE AQUI</a>
   </form>
 </body>
 

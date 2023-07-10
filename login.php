@@ -8,17 +8,23 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/login.css">
 
-  <title>Login - </title>
+  <title>Entrar | StarFilms</title>
 </head>
 
 <body>
   <div>
-    <form action="" class="login-form">
-      <input type="text" class="input-text" placeholder="email@email.com">
-      <input type="password" class="input-passowrd" placeholder="**********">
+    <form action="api/user/authenticate.php" class="login-form" method="post">
+      <input type="text" name="email" class="input-text" placeholder="email@email.com">
+      <input type="password" name="password" class="input-passowrd" placeholder="**********">
+
+      <?php
+      if (isset($_COOKIE['loginError'])) {
+        echo "<span class='error'>" . $_COOKIE['loginError'] . "</span>";
+      }
+      ?>
 
       <button class="button-primary">ENTRAR</button>
-      <a href="">CADASTRE-SE</a>
+      <a href="cadastrar.php">CADASTRE-SE</a>
     </form>
   </div>
 </body>

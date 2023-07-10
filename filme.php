@@ -1,7 +1,9 @@
 <?php
-require_once 'services/searchMovie.php';
+require_once 'services/movie.php';
 require_once 'classes/System.php';
 require_once 'utils/movie.php';
+
+session_start();
 
 $movieId = $_GET['movieId'];
 
@@ -65,7 +67,7 @@ $movie = getMovieFromApi($movieId);
   </main>
 
   <div>
-    <form action="">
+    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
       <div class="form-stars">
         <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 

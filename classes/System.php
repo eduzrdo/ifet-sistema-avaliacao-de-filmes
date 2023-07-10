@@ -10,6 +10,10 @@ define('PASTASISTEMA', 'ifet-sistema-avaliacao-de-filmes');
 // E:\xampp\htdocs\ifet-sistema-avaliacao-de-filmes
 define('PATH', ROOT . '/' . PASTASISTEMA . '/');
 
+require_once 'User.php';
+require_once 'Movie.php';
+require_once 'Rating.php';
+
 class System
 {
   //Exemplos de atributos da classe
@@ -79,12 +83,7 @@ class System
   {
     $this->movies[] = $movie;
 
-    end($this->movies);
-    $newId = key($this->movies);
-
-    $movie->setId($newId);
-
-    return $newId;
+    return $movie->getId();
   }
 
   public function createRating($rating)
