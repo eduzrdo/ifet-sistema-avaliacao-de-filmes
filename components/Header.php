@@ -5,7 +5,7 @@
     </div>
 
     <ul class="navigation-menu nav-text">
-      <li>Início</li>
+      <li><a href="index.php">Início</a></li>
     </ul>
 
     <div class="buttons">

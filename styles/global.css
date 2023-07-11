@@ -32,22 +32,46 @@ a:hover {
 }
 
 :root {
-  --primary-light: #3cffe8;
+  --primary-lightest: #a8fff5;
+  --primary-light: #7bfff0;
   --primary: #0FDFC8;
   --primary-dark: #104847;
+  --primary-darker: #112828;
   --primary-darkest: #0F1219;
 
   --white: #FFFFFF;
+  --white-50: rgba(255, 255, 255, 0.5);
   --gray-light: #EBEBEB;
 }
 
 body {
   color: var(--gray-light);
+  background-color: var(--primary-darkest);
+}
+
+body > :not(.page-header):not(.background-plane) {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  z-index: 10;
 }
 
 body, button, input, textarea {
   color: var(--gray-light);
   font-family: Roboto, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  transition: all 150ms;
+  cursor: pointer;
 }
 
 .title {
@@ -79,17 +103,20 @@ body, button, input, textarea {
   line-height: 160%;
 }
 
-.input-text {
-  color: var(--gray-light, #EBEBEB);
+.body-text-small {
+  /* body-text-small */
+  font-family: Roboto;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+}
 
+.input-text {
   /* input-text - input | textarea */
   font-size: 0.875rem;
   line-height: 160%;
 }
 
 .button-text {
-  color: var(--primary-darkest);
-
   /* button-text - button */
   font-size: 0.75rem;
   font-weight: 700;
@@ -113,7 +140,6 @@ header.page-header nav {
   align-items: center;
   height: 4rem;
   max-width: 1140px;
-  padding: 0 6rem;
   margin: 0 auto;
   box-sizing: content-box;
 }
@@ -132,6 +158,14 @@ header.page-header nav .navigation-menu {
   justify-content: center;
 
   list-style: none;
+}
+
+header.page-header nav .navigation-menu a {
+  color: var(--gray-light);
+}
+
+header.page-header nav .navigation-menu a:hover {
+  color: var(--white);
 }
 
 header.page-header nav .buttons {
@@ -158,4 +192,26 @@ header.page-header nav .buttons .search-button {
 
 header.page-header nav .buttons .icon-button {
 
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: var(--primary-darkest);
+  /* transition: background-color 150ms; */
+}
+
+.button-primary:hover {
+  background-color: var(--primary-lightest);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: inset 0px 0px 0px 2px var(--primary);
+  /* transition: all 150ms; */
+}
+
+.button-secondary:hover {
+  color: var(--primary-lightest);
+  box-shadow: inset 0px 0px 0px 2px var(--primary-lightest);
 }
