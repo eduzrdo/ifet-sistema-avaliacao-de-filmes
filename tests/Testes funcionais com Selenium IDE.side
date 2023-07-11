@@ -1,0 +1,171 @@
+{
+  "id": "71728cd8-878b-43b6-a580-83f4c143b1ca",
+  "version": "2.0",
+  "name": "Sistema de avaliação de filmes",
+  "url": "http://localhost/",
+  "tests": [{
+    "id": "0781c92c-f87e-42ed-9036-1a2c614d3406",
+    "name": "Login | senha incorreta",
+    "commands": [{
+      "id": "670305e2-3f71-47de-a212-d1d536802ef6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "153c6179-e499-4474-928c-a9594ff8a01f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x736",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d53ed525-a5ea-4528-8f2a-fa17f2feae39",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f235cb5-fe69-4786-befd-f14916b0961b",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "eduardoliveira.dev@gmail.com"
+    }, {
+      "id": "89d28f54-e021-41fb-a97e-55ccd1d841aa",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-passowrd", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6aadb67-7137-412d-96a8-85ae54d16ce8",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-passowrd", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "785c3d9f-12bc-4cdd-b653-4b685e9150b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "033520c5-1bbb-4f1c-82fe-40ceddb41feb",
+    "name": "Login | bem-sucedido",
+    "commands": [{
+      "id": "96b57c6d-d4a3-4c92-90d6-2d415aebce5c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73ecc271-2889-4b0a-ab00-66e70f76ea2f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x736",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6f66b82-1901-4c1c-92c5-75e7942e9e93",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "071450fb-9186-4cd2-ae15-d9173c5049f8",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "eduardoliveira.dev@gmail.com"
+    }, {
+      "id": "ec38e377-786a-423a-998d-2bce8062da1b",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-passowrd", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "399689aa-1497-4a53-bcfe-815887ea407e",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-passowrd", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "2c143a6f-9537-4370-8763-6f1d1332161d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "739cf5a8-3857-4e9e-bfe6-05aa7cad9f00",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0781c92c-f87e-42ed-9036-1a2c614d3406"]
+  }],
+  "urls": ["http://localhost/", "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php"],
+  "plugins": []
+}
