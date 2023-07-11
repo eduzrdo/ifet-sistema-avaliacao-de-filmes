@@ -21,7 +21,6 @@
                 </div>
                 <div class="navigation nav-text">
                     <p>Principal</p>
-                    <p>Melhores Avaliados</p>
                     <p>Mais Avalaidos</p>
                 </div>
                 <div class="search" onmouseleave="animationClose()">
