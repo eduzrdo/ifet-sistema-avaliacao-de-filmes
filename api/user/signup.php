@@ -21,4 +21,4 @@ session_start();
 $_SESSION['userId'] = $user->getId();
 $_SESSION['userEmail'] = $user->getEmail();
 
-header('Location: ../../test.php');
+header('Location: ../../index.php');

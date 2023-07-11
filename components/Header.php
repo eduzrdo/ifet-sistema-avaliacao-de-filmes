@@ -15,6 +15,9 @@
       <a href="" class="icon-button icon-button">
         <i class="ph-bold ph-user"></i>
       </a>
+      <a href="api/user/signout.php" class="icon-button icon-button">
+        <i class="ph-bold ph-sign-out"></i>
+      </a>
     </div>
   </nav>
 </header>

@@ -19,4 +19,4 @@ session_start();
 $_SESSION['userId'] = $response[1]['id'];
 $_SESSION['userEmail'] = $response[1]['email'];
 
-header('Location: ../../test.php');
+header('Location: ../../index.php');
