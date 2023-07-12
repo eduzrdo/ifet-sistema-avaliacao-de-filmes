@@ -12,14 +12,27 @@
 </head>
 
 <body>
-  <form action="" class="login-form">
-    <input type="text" class="input-text" placeholder="email@email.com">
-    <input type="password" class="input-passowrd" placeholder="digite uma senha">
-    <input type="password" class="input-passowrd" placeholder="confirme a senha">
+  <div class="background-plane">
+    <img class="" src="assets/login-background.jpg" alt="Plano de fundo">
 
-    <button class="button-primary">CADASTRAR</button>
-    <p>JÁ POSSUI CADASTRO?</p><a href="">ENTRE AQUI</a>
-  </form>
+    <div></div>
+  </div>
+
+  <div class="login-img">
+    <img src="./assets/starfilms-logo.svg" alt="">
+  </div>
+  <div>
+    <form action="" class="login-form">
+      <input type="text" class="input-text" placeholder="email@email.com">
+      <input type="password" class="input-passowrd" placeholder="digite uma senha">
+      <input type="password" class="input-passowrd" placeholder="confirme a senha">
+
+      <button class="button-primary">CADASTRAR</button>
+      <span class="text" >
+        <p>JÁ POSSUI CADASTRO? <a href="login.php">ENTRE AQUI</a></p>
+      </span>
+    </form>
+  </div>
 </body>
 
 </html>
