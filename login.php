@@ -12,13 +12,24 @@
 </head>
 
 <body>
+  <div class="background-plane">
+    <img class="" src="assets/login-background.jpg" alt="Plano de fundo">
+
+    <div></div>
+  </div>
+
+  <div class="login-img">
+    <img src="./assets/starfilms-logo.svg" alt="">
+  </div>
   <div>
     <form action="" class="login-form">
       <input type="text" class="input-text" placeholder="email@email.com">
       <input type="password" class="input-passowrd" placeholder="**********">
 
       <button class="button-primary">ENTRAR</button>
-      <a href="">CADASTRE-SE</a>
+      <span>
+        <a class="text" href="cadastrar.php">CADASTRE-SE</a>
+      </span>
     </form>
   </div>
 </body>
