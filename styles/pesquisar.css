@@ -1,3 +1,13 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.italic{
+    font-style: italic;
+}
+
 .background-plane {
     position: absolute;
     width: 100%;
@@ -33,7 +43,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.75rem;
-    color: #FFF;
+    color: var(--white);
     text-align: center;
 
 }
