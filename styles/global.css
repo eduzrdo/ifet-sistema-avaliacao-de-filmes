@@ -41,11 +41,12 @@ a:hover {
 
   --white: #FFFFFF;
   --white-50: rgba(255, 255, 255, 0.5);
-  --gray-light: #EBEBEB;
+  --gray-lighter: #EBEBEB;
+  --gray-light: #A9A9A9;
 }
 
 body {
-  color: var(--gray-light);
+  color: var(--gray-lighter);
   background-color: var(--primary-darkest);
 }
 
@@ -57,7 +58,7 @@ body > :not(.page-header):not(.background-plane) {
 }
 
 body, button, input, textarea {
-  color: var(--gray-light);
+  color: var(--gray-lighter);
   font-family: Roboto, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -113,7 +114,8 @@ button {
 .input-text {
   /* input-text - input | textarea */
   font-size: 0.875rem;
-  line-height: 160%;
+  font-weight: 500;
+  /* line-height: 160%; */
 }
 
 .button-text {
@@ -161,7 +163,7 @@ header.page-header nav .navigation-menu {
 }
 
 header.page-header nav .navigation-menu a {
-  color: var(--gray-light);
+  color: var(--gray-lighter);
 }
 
 header.page-header nav .navigation-menu a:hover {
@@ -172,6 +174,32 @@ header.page-header nav .buttons {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+header.page-header nav .buttons .search-input {
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  border-radius: 6.25rem;
+  background: var(--primary);
+  color: var(--primary-darkest);
+  font-weight: 500;
+}
+
+header.page-header nav .buttons .search-input input {
+  background-color: transparent;
+  color: var(--primary-darker);
+  border: none;
+  outline: none;
+}
+
+header.page-header nav .buttons .search-input input::placeholder {
+  color: var(--primary-dark);
+  font-weight: 400;
 }
 
 header.page-header nav .buttons .icon-button {

@@ -9,9 +9,13 @@
     </ul>
 
     <div class="buttons">
-      <div class="icon-button search-button">
-        <i class="ph-bold ph-magnifying-glass"></i>
-      </div>
+      <form action="pesquisar.php">
+        <label class="search-input">
+          <input class="input-text" type="text" name="search" placeholder="Procurar filme">
+          <i class="ph-bold ph-magnifying-glass"></i>
+        </label>
+      </form>
+
       <a href="" class="icon-button icon-button">
         <i class="ph-bold ph-user"></i>
       </a>
