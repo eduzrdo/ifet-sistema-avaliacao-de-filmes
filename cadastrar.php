@@ -12,20 +12,32 @@
 </head>
 
 <body>
-  <form action="api/user/signup.php" class="login-form" method="post">
-    <input type="text" name="email" class="input-text" placeholder="email@email.com">
-    <input type="password" name="password" class="input-passowrd" placeholder="digite uma senha">
-    <input type="password" name="confirmPassword" class="input-passowrd" placeholder="confirme a senha">
+  <div class="background-plane">
+    <img class="" src="assets/login-background.jpg" alt="Plano de fundo">
 
-    <?php
-    if (isset($_COOKIE['registerError'])) {
-      echo "<span class='error'>" . $_COOKIE['registerError'] . "</span>";
-    }
-    ?>
+    <div></div>
+  </div>
 
-    <button class="button-primary">CADASTRAR</button>
-    <p>JÁ POSSUI CADASTRO?</p><a href="login.php">ENTRE AQUI</a>
-  </form>
+  <div class="login-img">
+    <img src="./assets/starfilms-logo.svg" alt="">
+  </div>
+
+  <div>
+    <form action="api/user/signup.php" class="login-form" method="post">
+      <input type="text" name="email" class="input-text" placeholder="email@email.com">
+      <input type="password" name="password" class="input-text" placeholder="digite uma senha">
+      <input type="password" name="confirmPassword" class="input-text" placeholder="confirme a senha">
+
+      <?php
+      if (isset($_COOKIE['registerError'])) {
+        echo "<span class='error'>" . $_COOKIE['registerError'] . "</span>";
+      }
+      ?>
+
+      <button class="button-primary">CADASTRAR</button>
+      <span class="text">JÁ POSSUI CADASTRO? <a href="login.php">ENTRE AQUI</a></span>
+    </form>
+  </div>
 </body>
 
 </html>

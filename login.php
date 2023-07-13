@@ -12,6 +12,15 @@
 </head>
 
 <body>
+  <div class="background-plane">
+    <img class="" src="assets/login-background.jpg" alt="Plano de fundo">
+
+    <div></div>
+  </div>
+
+  <div class="login-img">
+    <img src="./assets/starfilms-logo.svg" alt="">
+  </div>
   <div>
     <form action="api/user/authenticate.php" class="login-form" method="post">
       <input type="text" name="email" class="input-text" placeholder="email@email.com">
@@ -24,7 +33,9 @@
       ?>
 
       <button class="button-primary">ENTRAR</button>
-      <a href="cadastrar.php">CADASTRE-SE</a>
+      <span>
+        <a class="text" href="cadastrar.php">CADASTRE-SE</a>
+      </span>
     </form>
   </div>
 </body>
