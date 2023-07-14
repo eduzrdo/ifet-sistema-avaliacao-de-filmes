@@ -21,10 +21,11 @@
   <div class="login-img">
     <img src="./assets/starfilms-logo.svg" alt="">
   </div>
+
   <div>
     <form action="api/user/authenticate.php" class="login-form" method="post">
-      <input type="text" name="email" class="input-text" placeholder="email@email.com">
-      <input type="password" name="password" class="input-passowrd" placeholder="**********">
+      <input type="email" name="email" class="input-text" placeholder="email@email.com" required>
+      <input type="password" name="password" class="input-text" placeholder="**********" required>
 
       <?php
       if (isset($_COOKIE['loginError'])) {

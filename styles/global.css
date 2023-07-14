@@ -170,19 +170,19 @@ header.page-header nav .navigation-menu a:hover {
   color: var(--white);
 }
 
-header.page-header nav .buttons {
+header.page-header nav .menu {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
 
-header.page-header nav .buttons .search-input {
+header.page-header nav .menu .search-input {
   display: flex;
   height: 2rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
 
   border-radius: 6.25rem;
   background: var(--primary);
@@ -190,19 +190,30 @@ header.page-header nav .buttons .search-input {
   font-weight: 500;
 }
 
-header.page-header nav .buttons .search-input input {
+header.page-header nav .menu .search-input input {
   background-color: transparent;
   color: var(--primary-darker);
   border: none;
   outline: none;
 }
 
-header.page-header nav .buttons .search-input input::placeholder {
+header.page-header nav .menu .search-input input::placeholder {
   color: var(--primary-dark);
   font-weight: 400;
 }
 
-header.page-header nav .buttons .icon-button {
+header.page-header nav .menu .search-input button {
+  all: unset;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+header.page-header nav .menu .search-input button:hover i {
+  color: var(--white);
+}
+
+header.page-header nav .menu .icon-button {
   display: flex;
   width: 2rem;
   height: 2rem;
@@ -214,11 +225,11 @@ header.page-header nav .buttons .icon-button {
   color: var(--primary-darkest);
 }
 
-header.page-header nav .buttons .search-button {
+header.page-header nav .menu .search-button {
 
 }
 
-header.page-header nav .buttons .icon-button {
+header.page-header nav .menu .icon-button {
 
 }
 

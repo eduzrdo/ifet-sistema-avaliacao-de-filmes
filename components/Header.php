@@ -8,11 +8,13 @@
       <li><a href="index.php">Início</a></li>
     </ul>
 
-    <div class="buttons">
-      <form action="pesquisar.php">
+    <div class="menu">
+      <form action="pesquisar.php" method="get">
         <label class="search-input">
           <input class="input-text" type="text" name="search" placeholder="Procurar filme">
-          <i class="ph-bold ph-magnifying-glass"></i>
+          <button>
+            <i class="ph-bold ph-magnifying-glass"></i>
+          </button>
         </label>
       </form>
 
@@ -22,6 +24,7 @@
       <a href="api/user/signout.php" class="icon-button icon-button">
         <i class="ph-bold ph-sign-out"></i>
       </a>
+      <!-- <a href="users.php">ACESSAR USUÁRIOS</a> -->
     </div>
   </nav>
 </header>

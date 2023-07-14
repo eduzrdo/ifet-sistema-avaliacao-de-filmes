@@ -1,3 +1,20 @@
+<?php
+require_once 'services/movie.php';
+require_once 'utils/movie.php';
+
+$search = $_GET['search'];
+
+$result = searchMovie($search);
+$success = $result[0];
+$data;
+
+if ($success) {
+  $data = $result[1]->results;
+} else {
+  $data = $result[1];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,7 +25,15 @@
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/pesquisar.css">
 
-  <title>Resultados - </title>
+  <title>
+    <?php
+    if ($success) {
+      echo count($data) . " filmes encontrados";
+    } else {
+      echo $data;
+    }
+    ?>
+  </title>
 </head>
 
 <body class="body">
@@ -21,70 +46,28 @@
 
   <?php require_once 'components/Header.php' ?>
 
-  <span class="">Resultados de filmes: <span class="italic">"Piratas do Caribe"</span></span>
+  <span class="">Mostrando resultados para <span class="italic">"<?php echo $search; ?>"</span></span>
 
   <div class="movie-grid">
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
-    
-      <a href="" class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
-        <span class="body-text">Nome do Filme</span>
-      </a>
+    <?php
+    if (count($data) === 0) {
+      echo '
+        <span>
+          Nenhum filme encontrado.
+        </span>
+      ';
+    } else {
+      foreach ($data as $movie) {
+        echo '
+          <a href="filme.php?movieId=' . $movie->id . '" class="movie-card">
+            <img src="' . makeMoviePoster($movie->poster_path) . '">
+            <span class="body-text">' . $movie->title . '</span>
+          </a>
+        ';
+      }
+    }
+    ?>
   </div>
-</body >
+</body>
 
 </html>
