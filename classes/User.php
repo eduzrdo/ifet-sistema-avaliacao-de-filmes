@@ -48,6 +48,6 @@ class User
 
   function addRating($rating)
   {
-    $this->ratings[] = $rating;
+    array_unshift($this->ratings, $rating);
   }
 }

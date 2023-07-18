@@ -18,3 +18,7 @@ function refillStars(event) {
     }
   });
 }
+
+function focusCommentField() {
+  document.querySelector('textarea').focus();
+}

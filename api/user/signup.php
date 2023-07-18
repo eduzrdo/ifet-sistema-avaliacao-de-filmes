@@ -5,9 +5,10 @@ require_once '../../classes/User.php';
 $system = new System();
 
 $email = $_POST['email'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 
-$user = new User('', $email, $password);
+$user = new User($name, $email, $password);
 $response = $system->createUser($user);
 
 if ($response[0] === false) {

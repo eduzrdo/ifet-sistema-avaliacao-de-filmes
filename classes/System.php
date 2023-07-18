@@ -142,7 +142,7 @@ class System
       }
     }
 
-    return [false, "Esse filme ainda não possui avaliações. Seja o primeiro! 😁"];
+    return [false, "Esse filme ainda não possui avaliações."];
   }
 
   public function searchMovie($search)

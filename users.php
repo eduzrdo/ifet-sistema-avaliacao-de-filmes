@@ -2,6 +2,15 @@
 require_once 'classes/System.php';
 
 $system = new System();
+
+echo '<pre>';
+var_dump(count($system->getUsers()[0]->getRatings()));
+echo '</pre>';
+
+echo '<pre>';
+var_dump($system->getUsers()[0]->getRatings());
+echo '</pre>';
+
 ?>
 
 <!DOCTYPE html>

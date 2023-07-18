@@ -21,16 +21,16 @@ $score = $_POST['score'];
 $comment = $_POST['comment'];
 $movieId = $_GET['movieId'];
 
-$movieData = getMovieFromApi($movieId);
+$movie = $system->findMovie(intval($movieId));
 
-// echo '<pre>';
-// var_dump($movieData[1]);
-// echo '</pre>';
+if ($movie[0] !== true) {
+  $movieData = getMovieFromApi($movieId);
+  $movie = new Movie($movieData[1]->id, $movieData[1]->title, $movieData[1]->poster_path, $movieData[1]->backdrop_path, $movieData[1]->overview);
+} else {
+  $movie = $movie[1];
+}
 
-$movie = new Movie($movieData[1]->id, $movieData[1]->title, $movieData[1]->poster_path, $movieData[1]->backdrop_path);
 $rating = new Rating($userResponse[1], $movie, intval($score), $comment);
 $system->createRating($rating);
 
-echo '<pre>';
-var_dump($system);
-echo '</pre>';
+header('Location: ../../filme.php?movieId=' . $movieId);

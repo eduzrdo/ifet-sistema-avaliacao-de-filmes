@@ -1,24 +1,28 @@
 <?php
 require_once 'services/movie.php';
 require_once 'classes/System.php';
+require_once 'classes/Movie.php';
 require_once 'utils/movie.php';
+
+$system = new System();
 
 session_start();
 
 $movieId = $_GET['movieId'];
 
-// $movieId = 338953; // Animais Fantásticos: Os Segredos de Dumbledore
-// $movieId = 22; // Piratas do Caribe: A Maldição do Pérola Negra
-// $movieId = 177572; // Operação Big Hero (Big Hero 6)
-// $movieId = 671; // Harry Potter e a Pedra Filosofal
-// $movieId = 673; // Harry Potter e o Prisioneiro de Azkaban
-// $movieId = 675; // Harry Potter e a Ordem da Fênix
+$movie = $system->findMovie(intval($movieId));
+$hasRatings;
+$message;
 
-$movie = getMovieFromApi($movieId);
-
-// echo '<pre>';
-// var_dump($movie);
-// echo '</pre>';
+if ($movie[0] === true) {
+  $hasRatings = true;
+  $movie = $movie[1];
+} else {
+  $hasRatings = false;
+  $message = $movie[1];
+  $movieData = getMovieFromApi($movieId);
+  $movie = new Movie($movieData[1]->id, $movieData[1]->title, $movieData[1]->poster_path, $movieData[1]->backdrop_path, $movieData[1]->overview);
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +37,12 @@ $movie = getMovieFromApi($movieId);
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/filme.css">
 
-  <title>Avaliações - <?php echo $movie[1]->title; ?></title>
+  <title>Avaliações - <?php echo $movie->getTitle(); ?></title>
 </head>
 
 <body>
   <div class="background-plane">
-    <img class="" src="<?php echo makeMovieBackdropPath($movie[1]->backdrop_path); ?>" alt="Plano de fundo de <?php echo $movie[1]->title; ?>">
+    <img class="" src="<?php echo makeMovieBackdropPath($movie->getBackdropPath()); ?>" alt="Plano de fundo de <?php echo $movie->getTitle(); ?>">
 
     <div></div>
   </div>
@@ -46,10 +50,10 @@ $movie = getMovieFromApi($movieId);
   <?php require_once 'components/Header.php' ?>
 
   <main>
-    <img src="<?php echo makeMoviePoster($movie[1]->poster_path); ?>" alt="Poster de Interestelar">
+    <img src="<?php echo makeMoviePoster($movie->getPosterPath()); ?>" alt="Poster de Interestelar">
 
     <div class="movie-info">
-      <h1 class="title"><?php echo $movie[1]->title; ?></h1>
+      <h1 class="title"><?php echo $movie->getTitle(); ?></h1>
 
       <div class="stars">
         <i class="ph-fill ph-star"></i>
@@ -61,7 +65,7 @@ $movie = getMovieFromApi($movieId);
       </div>
 
       <p class="body-text">
-        <?php echo $movie[1]->overview ?>
+        <?php echo $movie->getOverview() ?>
       </p>
     </div>
   </main>
@@ -108,34 +112,34 @@ $movie = getMovieFromApi($movieId);
     <h2 class="subtitle">Avaliações</h2>
 
     <div class="rating-list">
-      <div class="rating">
-        <div>
-          <h3 class="body-text-bold">Zé das Couve</h3>
-          <div class="rating-score">
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-          </div>
-        </div>
-        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small date">05/07/2023 - 09:06</span>
-      </div>
+      <?php
+      if ($hasRatings) {
+        foreach ($movie->getRatings() as $rating) {
+          echo "
+            <div class='rating'>
+              <div>
+                <h3 class='body-text-bold'>" . $rating->getUser()->getName() . "</h3>
+                <div class='rating-score'>";
+          for ($i = 0; $i < $rating->getScore(); $i++) {
+            echo "<i class='ph-fill ph-star'></i>";
+          }
+          echo
+          "</div>
+              </div>
+              <p class='body-text'>" . $rating->getComment() . "</p>
+            </div>
+              ";
+          // <span class='body-text-small date'>05/07/2023 - 09:06</span>
+        }
+      } else {
+        echo "<span class='no-movies'>$message <span onclick='focusCommentField()'>Seja o primeiro! 😁</span></span>";
+      }
+      ?>
 
-      <div class="rating">
-        <div>
-          <h3 class="body-text-bold">Zé das Couve</h3>
-          <div class="rating-score">
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-          </div>
-        </div>
-        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small date">05/07/2023 - 09:06</span>
-      </div>
+      <span onclick='focusCommentField()'></span>
 
-      <div class="rating">
+      <!-- COMMENT -->
+      <!-- <div class="rating">
         <div>
           <h3 class="body-text-bold">Zé das Couve</h3>
           <div class="rating-score">
@@ -148,7 +152,7 @@ $movie = getMovieFromApi($movieId);
         </div>
         <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
         <span class="body-text-small date">05/07/2023 - 09:06</span>
-      </div>
+      </div> -->
     </div>
   </div>
 

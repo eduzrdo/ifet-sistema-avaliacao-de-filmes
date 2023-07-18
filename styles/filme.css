@@ -121,6 +121,12 @@ form .form-buttons {
   gap: 2rem;
 }
 
+.ratings-container .rating-list .no-movies span {
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .ratings-container .rating {
   display: flex;
   flex-direction: column;
