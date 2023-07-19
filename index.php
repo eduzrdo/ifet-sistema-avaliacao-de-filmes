@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pag Inicial</title>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="./styles/jsHome/home.js"></script>
+
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/home.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./styles/jsHome/home.js"></script>
+    
+    <title>Início - StarFilms</title>
 </head>
 
 <body>

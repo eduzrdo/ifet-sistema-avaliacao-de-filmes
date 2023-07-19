@@ -36,6 +36,9 @@ class System
       $this->users = $system->getUsers();
       $this->movies = $system->getMovies();
       $this->ratings = $system->getRatings();
+    } else {
+      $administrator = new User('Administrador', 'admin@starfilms.com', 'qpwoeiru');
+      $this->createUser($administrator);
     }
   }
 
@@ -61,6 +64,10 @@ class System
     return $this->ratings;
   }
 
+  public function getMostRatedMovies() {
+    return $this->mostRatedMovies;
+  }
+  
   public function createUser($user)
   {
     $systemUser = $this->findUser($user->getEmail());
@@ -100,7 +107,17 @@ class System
     if ($systemMovie[0] === false) {
       $this->createMovie($rating->getMovie());
     }
-  }
+
+    $novoVetor = array_filter($this->getMostRatedMovies(), function ($filme) use ($rating) {
+      return $filme->getAvaliacoes() >= count($rating->getMovie()->getRatings());
+    });
+
+    $quantidadeNovoVetor = count($novoVetor);
+
+    $vetorRestante = array_slice($this->getMostRatedMovies(), $quantidadeNovoVetor, 5 - count($novoVetor) - 1);
+
+    $novoFilmesMaisAvaliados = array_merge($novoVetor, [$rating->getMovie()], $vetorRestante);
+}
 
   public function findUser($email)
   {

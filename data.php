@@ -20,9 +20,30 @@ $system = new System();
   <?php require_once 'components/Header.php' ?>
 
   <?php
+  foreach ($system->getMovies() as $movie) {
+    echo "<p>" . $movie->getTitle() . "</p>";
+    echo "<p>Média de avaliações: " . $movie->getAverageScore() . "</p>";
+    echo "<br>";
+  }
+
+  echo '<br>';
+
   foreach ($system->getUsers() as $user) {
     echo "<p>" . $user->getEmail() . "</p>";
   }
+
+  echo '<br>';
+
+  foreach ($system->getRatings() as $rating) {
+    echo "<p>" . $rating->getScore() . " - " . $rating->getComment() . "</p>";
+  }
+
+  echo '<br>';
+
+  echo '<pre>';
+  var_dump($system->getMostRatedMovies());
+  echo '</pre>';
+  
   ?>
 </body>
 
