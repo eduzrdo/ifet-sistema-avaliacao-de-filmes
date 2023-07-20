@@ -14,12 +14,10 @@ require_once 'User.php';
 require_once 'Movie.php';
 require_once 'Rating.php';
 
+require_once PATH . 'utils/sort.php';
+
 class System
 {
-  //Exemplos de atributos da classe
-  //private agencias;
-  //private clientes;
-
   private $users = [];
   private $movies = [];
   private $ratings = [];
@@ -36,6 +34,7 @@ class System
       $this->users = $system->getUsers();
       $this->movies = $system->getMovies();
       $this->ratings = $system->getRatings();
+      $this->mostRatedMovies = $system->getMostRatedMovies();
     } else {
       $administrator = new User('Administrador', 'admin@starfilms.com', 'qpwoeiru');
       $this->createUser($administrator);
@@ -64,10 +63,11 @@ class System
     return $this->ratings;
   }
 
-  public function getMostRatedMovies() {
+  public function getMostRatedMovies()
+  {
     return $this->mostRatedMovies;
   }
-  
+
   public function createUser($user)
   {
     $systemUser = $this->findUser($user->getEmail());
@@ -108,16 +108,13 @@ class System
       $this->createMovie($rating->getMovie());
     }
 
-    $novoVetor = array_filter($this->getMostRatedMovies(), function ($filme) use ($rating) {
-      return $filme->getAvaliacoes() >= count($rating->getMovie()->getRatings());
-    });
-
-    $quantidadeNovoVetor = count($novoVetor);
-
-    $vetorRestante = array_slice($this->getMostRatedMovies(), $quantidadeNovoVetor, 5 - count($novoVetor) - 1);
-
-    $novoFilmesMaisAvaliados = array_merge($novoVetor, [$rating->getMovie()], $vetorRestante);
-}
+    if (!in_array($rating->getMovie(), $this->mostRatedMovies)) {
+      $this->mostRatedMovies[] = $rating->getMovie();
+    };
+    usort($this->mostRatedMovies, "sortMostRatedMoviesArray");
+    $newMostRatedMovies = array_slice($this->mostRatedMovies, 0, 5);
+    $this->mostRatedMovies = $newMostRatedMovies;
+  }
 
   public function findUser($email)
   {

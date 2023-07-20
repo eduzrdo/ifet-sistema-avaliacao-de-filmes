@@ -1,3 +1,15 @@
+<?php
+require_once 'classes/System.php';
+require_once 'utils/movie.php';
+
+$system = new System();
+
+echo '<pre>';
+var_dump(count($system->getMostRatedMovies()));
+echo '</pre>';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,7 +22,7 @@
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="./styles/jsHome/home.js"></script>
-    
+
     <title>Início - StarFilms</title>
 </head>
 
@@ -47,26 +59,16 @@
         </div>
 
         <div class="best-movies">
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
+            <?php
+            foreach ($system->getMostRatedMovies() as $movie) {
+                echo "
+                    <div class='movie-card'>
+                        <img src='" . makeMoviePoster($movie->getPosterPath()) . "' alt='" . $movie->getTitle() . "'>
+                        <span class='body-text'>" . $movie->getTitle() . "</span>
+                    </div>
+                ";
+            }
+            ?>
         </div>
     </main>
 </body>

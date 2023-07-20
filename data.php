@@ -40,10 +40,9 @@ $system = new System();
 
   echo '<br>';
 
-  echo '<pre>';
+  echo '<pre>most rated movies<br>';
   var_dump($system->getMostRatedMovies());
   echo '</pre>';
-  
   ?>
 </body>
 
