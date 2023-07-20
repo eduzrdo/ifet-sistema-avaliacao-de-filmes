@@ -10,7 +10,7 @@
       "id": "670305e2-3f71-47de-a212-d1d536802ef6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
       "targets": [],
       "value": ""
     }, {
@@ -87,7 +87,7 @@
       "id": "96b57c6d-d4a3-4c92-90d6-2d415aebce5c",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
       "targets": [],
       "value": ""
     }, {
@@ -166,6 +166,6 @@
     "timeout": 300,
     "tests": ["0781c92c-f87e-42ed-9036-1a2c614d3406"]
   }],
-  "urls": ["http://localhost/", "http://localhost/ifet-sistema-avaliacao-de-filmes/login.php"],
+  "urls": ["http://localhost/", "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php"],
   "plugins": []
 }

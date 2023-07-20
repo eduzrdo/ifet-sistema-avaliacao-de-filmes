@@ -3,11 +3,6 @@ require_once 'classes/System.php';
 require_once 'utils/movie.php';
 
 $system = new System();
-
-echo '<pre>';
-var_dump(count($system->getMostRatedMovies()));
-echo '</pre>';
-
 ?>
 
 <!DOCTYPE html>

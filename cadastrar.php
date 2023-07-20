@@ -36,7 +36,7 @@
       ?>
 
       <button class="button-primary">CADASTRAR</button>
-      <span class="text">JÁ POSSUI CADASTRO? <a href="login.php">ENTRE AQUI</a></span>
+      <span class="text">JÁ POSSUI CADASTRO? <a href="entrar.php">ENTRE AQUI</a></span>
     </form>
   </div>
 </body>

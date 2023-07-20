@@ -56,12 +56,20 @@ if ($movie[0] === true) {
       <h1 class="title"><?php echo $movie->getTitle(); ?></h1>
 
       <div class="stars">
-        <i class="ph-fill ph-star"></i>
-        <i class="ph-fill ph-star"></i>
-        <i class="ph-fill ph-star"></i>
-        <i class="ph-fill ph-star"></i>
-        <i class="ph ph-star"></i>
-        <span class="score button-text">4.9</span>
+        <?php
+        if ($hasRatings) {
+          $filledStars = floor($movie->getAverageScore());
+
+          for ($i = 0; $i < $filledStars; $i++) {
+            echo "<i class='ph-fill ph-star'></i>";
+          }
+
+          for ($i = 0; $i < 5 - $filledStars; $i++) {
+            echo "<i class='ph ph-star'></i>";
+          }
+        }
+        ?>
+        <span class="score button-text"><?php echo number_format($movie->getAverageScore(), 1, ".", "") ?></span>
       </div>
 
       <p class="body-text">
@@ -103,7 +111,7 @@ if ($movie[0] === true) {
 
       <div class="form-buttons">
         <button class="button-primary">AVALIAR</button>
-        <button class="button-secondary">APAGAR</button>
+        <!-- <button class="button-secondary">APAGAR</button> -->
       </div>
     </form>
   </div>

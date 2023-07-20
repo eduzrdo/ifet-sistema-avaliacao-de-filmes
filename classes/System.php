@@ -116,6 +116,10 @@ class System
     $this->mostRatedMovies = $newMostRatedMovies;
   }
 
+  public function deleteRating($ratingId)
+  {
+  }
+
   public function findUser($email)
   {
     foreach ($this->users as $user) {

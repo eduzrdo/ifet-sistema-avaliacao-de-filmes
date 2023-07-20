@@ -9,8 +9,8 @@ $password = $_POST['password'];
 $response = $system->authUser($email, $password);
 
 if ($response[0] === false) {
-  setcookie('loginError', $response[1], time() + 2, '/ifet-sistema-avaliacao-de-filmes/login.php');
-  header('Location: ../../login.php');
+  setcookie('loginError', $response[1], time() + 2, '/ifet-sistema-avaliacao-de-filmes/entrar.php');
+  header('Location: ../../entrar.php');
   exit();
 }
 
