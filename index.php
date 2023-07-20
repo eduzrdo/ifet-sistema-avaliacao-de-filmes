@@ -1,14 +1,24 @@
+<?php
+require_once 'classes/System.php';
+require_once 'utils/movie.php';
+
+$system = new System();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pag Inicial</title>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="./styles/jsHome/home.js"></script>
+
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/home.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./styles/jsHome/home.js"></script>
+
+    <title>Início - StarFilms</title>
 </head>
 
 <body>
@@ -44,26 +54,16 @@
         </div>
 
         <div class="best-movies">
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
-            <div class="movie-card">
-                <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Pottaaaa">
-                <span class="body-text">oi</span>
-            </div>
+            <?php
+            foreach ($system->getMostRatedMovies() as $movie) {
+                echo "
+                    <div class='movie-card'>
+                        <img src='" . makeMoviePoster($movie->getPosterPath()) . "' alt='" . $movie->getTitle() . "'>
+                        <span class='body-text'>" . $movie->getTitle() . "</span>
+                    </div>
+                ";
+            }
+            ?>
         </div>
     </main>
 </body>

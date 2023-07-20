@@ -55,5 +55,4 @@
   echo '<pre>';
   var_dump($novoFilmesMaisAvaliados);
   echo '</pre>';
-
   ?>
