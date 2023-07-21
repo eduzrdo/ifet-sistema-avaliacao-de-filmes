@@ -6,6 +6,11 @@ require_once 'utils/movie.php';
 
 $system = new System();
 
+echo '<pre>';
+// var_dump($system->getRatings());
+echo '</pre>';
+
+
 $movieId = $_GET['movieId'];
 
 $movie = $system->findMovie(intval($movieId));
@@ -35,7 +40,7 @@ if ($movie[0] === true) {
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/filme.css">
 
-  <title>Avaliações - <?php echo $movie->getTitle(); ?></title>
+  <title><?php echo $movie->getTitle(); ?> ⭐ StarFilms</title>
 </head>
 
 <body>
@@ -48,7 +53,7 @@ if ($movie[0] === true) {
   <?php require_once 'components/Header.php' ?>
 
   <main>
-    <img src="<?php echo makeMoviePoster($movie->getPosterPath()); ?>" alt="Poster de Interestelar">
+    <img src="<?php echo makeMoviePoster($movie->getPosterPath()); ?>" alt="Capa do filme <?php echo $movie->getTitle(); ?>">
 
     <div class="movie-info">
       <h1 class="title"><?php echo $movie->getTitle(); ?></h1>
@@ -77,7 +82,7 @@ if ($movie[0] === true) {
   </main>
 
   <div>
-    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
+    <form action="api/rating/createRate.php?movieId=<?php echo $movieId; ?>" method="post">
       <div class="form-stars">
         <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 
@@ -125,12 +130,16 @@ if ($movie[0] === true) {
             <div class='rating'>
               <div>
                 <h3 class='body-text-bold'>" . $rating->getUser()->getName() . "</h3>
-                <div class='rating-score'>";
+                <div class='rating-score'>
+          ";
           for ($i = 0; $i < $rating->getScore(); $i++) {
-            echo "<i class='ph-fill ph-star'></i>";
+            echo "
+                  <i class='ph-fill ph-star'></i>
+            ";
           }
-          echo
-          "</div>
+          echo "
+                </div>
+                <a href='api/rating/deleteRate.php?ratingId=" . $rating->getId() . "&movieId=" . $movie->getId() . "'><i class='ph ph-trash'></i></a>
               </div>
               <p class='body-text'>" . $rating->getComment() . "</p>
             </div>

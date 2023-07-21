@@ -116,8 +116,21 @@ class System
     $this->mostRatedMovies = $newMostRatedMovies;
   }
 
-  public function deleteRating($ratingId)
+  public function deleteRating($userId, $ratingId, $movieId)
   {
+    // array_splice($this->ratings, $ratingId, 1);
+    // unset($this->ratings[$ratingId]);
+    // $movieRatings = $this->findMovie($movieId)[1]->getRatings();
+    // unset($movieRatings[$ratingId]);
+    // $userRatings = $this->users[$userId]->getRatings();
+    // unset(userRatings[$ratingId]);
+
+
+    // echo '<pre>';
+    // var_dump($this->ratings[$ratingId]);
+    // var_dump($this->findMovie($movieId)[1]->getRatings()[$ratingId]);
+    // var_dump($this->users[$userId]->getRatings()[$ratingId]);
+    // echo '</pre>';
   }
 
   public function findUser($email)

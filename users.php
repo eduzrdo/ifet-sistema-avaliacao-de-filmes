@@ -20,8 +20,8 @@ $system = new System();
   <?php require_once 'components/Header.php' ?>
 
   <?php
-  foreach ($system->getUsers() as $user) {
-    echo "<p>" . $user->getEmail() . "</p>";
+  foreach ($system->getRatings() as $rating) {
+    echo "<p>" . $rating->getId() . " -> " . $rating->getComment() . " - " . $rating->getUser()->getId() . "</p>";
   }
   ?>
 </body>
