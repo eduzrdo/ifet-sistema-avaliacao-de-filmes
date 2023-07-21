@@ -95,10 +95,6 @@ header.page-header nav .menu .icon-button {
   transition: all 150ms;
 }
 
-header.page-header nav .menu .search-button {
-
-}
-
 header.page-header nav .menu .icon-button:hover {
   background-color: var(--primary-light);
 }
