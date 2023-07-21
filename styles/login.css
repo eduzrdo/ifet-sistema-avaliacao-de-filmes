@@ -1,10 +1,9 @@
 body {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
-  /* background-image: url(../assets/login-background.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -75,10 +74,9 @@ a{
   color: var(--primary-light)
 }
 
-.login-img img {
-  position: absolute;
-  left: 50rem;
-  top: 4rem;
+.logo-img {
+  position: relative;
   width: 16rem;
   height: 6rem;
+  top: 3rem;
 }
