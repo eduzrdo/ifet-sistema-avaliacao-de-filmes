@@ -22,8 +22,6 @@ if ($success) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/pesquisar.css">
 

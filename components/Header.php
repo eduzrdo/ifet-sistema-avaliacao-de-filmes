@@ -4,6 +4,7 @@ session_start();
 $isAuthenticated = count($_SESSION) > 0;
 ?>
 
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
 <header class="page-header">
   <nav>
     <div class="logo">
