@@ -24,7 +24,7 @@
 
   <div>
     <form action="api/user/signup.php" class="login-form" method="post">
-      <input type="email" name="email" class="input-text" placeholder="email@email.com" required>
+      <input type="email" name="email" class="input-text" placeholder="Informe seu email" required>
       <input type="text" name="name" class="input-text" placeholder="Seu nome" required>
       <input type="password" name="password" class="input-text" placeholder="Digite uma senha" required>
       <input type="password" name="confirmPassword" class="input-text" placeholder="Confirme a senha" required>

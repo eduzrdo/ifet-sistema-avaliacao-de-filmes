@@ -2,6 +2,10 @@
 require_once '../../classes/System.php';
 require_once '../../classes/User.php';
 
+// Destrói a sessão por padrão, quando o usuário tenta fazer um novo cadastro.
+session_start();
+session_destroy();
+
 $system = new System();
 
 $email = $_POST['email'];
