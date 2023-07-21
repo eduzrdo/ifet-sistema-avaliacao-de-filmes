@@ -1,3 +1,6 @@
+@import 'header.css';
+@import 'colors.css';
+
 @font-face {
   font-family: 'Roboto';
   font-weight: 400;
@@ -29,20 +32,6 @@ a {
 
 a:hover {
   color: var(--primary-light);
-}
-
-:root {
-  --primary-lightest: #a8fff5;
-  --primary-light: #7bfff0;
-  --primary: #0FDFC8;
-  --primary-dark: #104847;
-  --primary-darker: #112828;
-  --primary-darkest: #0F1219;
-
-  --white: #FFFFFF;
-  --white-50: rgba(255, 255, 255, 0.5);
-  --gray-lighter: #EBEBEB;
-  --gray-light: #A9A9A9;
 }
 
 body {
@@ -133,110 +122,9 @@ button {
   line-height: 160%;
 }
 
-header.page-header {
-  border-bottom: 1px solid var(--primary);
-}
-
-header.page-header nav {
-  display: flex;
-  align-items: center;
-  height: 4rem;
-  max-width: 1140px;
-  margin: 0 auto;
-  box-sizing: content-box;
-}
-
-header.page-header nav > * {
-  flex: 1;
-}
-
-header.page-header nav .logo img {
-  width: 5.75rem;
-  height: 2.25rem;
-}
-
-header.page-header nav .navigation-menu {
-  display: flex;
-  justify-content: center;
-
-  list-style: none;
-}
-
-header.page-header nav .navigation-menu a {
-  color: var(--gray-lighter);
-}
-
-header.page-header nav .navigation-menu a:hover {
-  color: var(--white);
-}
-
-header.page-header nav .menu {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-header.page-header nav .menu .search-input {
-  display: flex;
-  height: 2rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 0 1rem 1rem;
-
-  border-radius: 6.25rem;
-  background: var(--primary);
-  color: var(--primary-darkest);
-  font-weight: 500;
-}
-
-header.page-header nav .menu .search-input input {
-  background-color: transparent;
-  color: var(--primary-darker);
-  border: none;
-  outline: none;
-}
-
-header.page-header nav .menu .search-input input::placeholder {
-  color: var(--primary-dark);
-  font-weight: 400;
-}
-
-header.page-header nav .menu .search-input button {
-  all: unset;
-  padding: 1rem;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-header.page-header nav .menu .search-input button:hover i {
-  color: var(--white);
-}
-
-header.page-header nav .menu .icon-button {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 6.25rem;
-  background: var(--primary);
-  color: var(--primary-darkest);
-}
-
-header.page-header nav .menu .search-button {
-
-}
-
-header.page-header nav .menu .icon-button {
-
-}
-
 .button-primary {
   background-color: var(--primary);
   color: var(--primary-darkest);
-  /* transition: background-color 150ms; */
 }
 
 .button-primary:hover {
@@ -251,6 +139,31 @@ header.page-header nav .menu .icon-button {
 }
 
 .button-secondary:hover {
-  color: var(--primary-lightest);
-  box-shadow: inset 0px 0px 0px 2px var(--primary-lightest);
+  color: var(--primary-light);
+  box-shadow: inset 0px 0px 0px 2px var(--primary-light);
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem  ;
+  border: none;
+
+  height: 2rem;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-darkest);
+  background-color: var(--primary);
+  
+  text-transform: uppercase;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-darkest);
 }

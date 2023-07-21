@@ -24,28 +24,26 @@ $isAuthenticated = count($_SESSION) > 0;
         </label>
       </form>
 
-      <a href="" class="icon-button">
+      <!-- <a href="" class="icon-button">
         <i class="ph-bold ph-user"></i>
-      </a>
+      </a> -->
       <?php
       if ($isAuthenticated) {
         echo "
-            <a href='api/user/signout.php' class='icon-button'>
-              <i class='ph-bold ph-sign-out'></i>
-            </a>
-          ";
+        <a href='api/user/signout.php' class='login-button'>
+          <span>Sair</span>
+          <i class='ph-bold ph-sign-out'></i>
+        </a>
+        ";
       } else {
         echo "
-          <a href='entrar.php' class='icon-button'>
-            <i class='ph-bold ph-sign-in'></i>
-          </a>
+        <a href='entrar.php' class='login-button'>
+          <span>Entrar</span>
+          <i class='ph-bold ph-sign-in'></i>
+        </a>
         ";
       }
       ?>
-      <a href='entrar.php' class='button-primary'>
-        <span>Entrar</span>
-        <i class='ph-bold ph-sign-in'></i>
-      </a>
       <!-- <a href="users.php">ACESSAR USUÁRIOS</a> -->
     </div>
   </nav>
