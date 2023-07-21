@@ -6,8 +6,6 @@ require_once 'utils/movie.php';
 
 $system = new System();
 
-session_start();
-
 $movieId = $_GET['movieId'];
 
 $movie = $system->findMovie(intval($movieId));

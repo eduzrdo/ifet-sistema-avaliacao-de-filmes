@@ -18,7 +18,7 @@ $system = new System();
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="./styles/jsHome/home.js"></script>
 
-    <title>Início - StarFilms</title>
+    <title>Início ⭐ StarFilms</title>
 </head>
 
 <body>
