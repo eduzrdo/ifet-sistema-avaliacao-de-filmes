@@ -79,7 +79,7 @@ if ($movie[0] === true) {
   </main>
 
   <div>
-    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
+    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post"  >
       <div class="form-stars">
         <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 
@@ -101,7 +101,7 @@ if ($movie[0] === true) {
             <i class="ph ph-star"></i>
           </label>
           <label>
-            <input type="radio" name="score" value="5" class="star-input">
+            <input type="radio" name="score" value="5" class="star-input" id='estrela'>
             <i class="ph ph-star"></i>
           </label>
         </div>
@@ -165,6 +165,31 @@ if ($movie[0] === true) {
   </div>
 
   <script src="scripts/movie.js"></script>
+
+  <script>
+    function verificar() {
+      const input = document.querySelector('input[type=radio]:checked');
+      console.log(input)
+/*
+      if (inputs.length > 0) {
+        return true;
+      }
+
+      let value = document.getElementsByClassName('star-input')
+      
+      for (let i = 0; i < value.length; i++) {
+        if (value[i].checked){
+          return true
+        }
+      }
+      console.log(estrela)
+      estrela.setCustomValidity("Mar");
+      estrela.reportValidity();
+      */
+      return false
+    }
+  </script>
+
 </body>
 
 </html>
