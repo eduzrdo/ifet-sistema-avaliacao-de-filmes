@@ -47,8 +47,13 @@ if (!isset($_GET['id'])) {
                 <?php
                 $filledStars = floor($movie->getAverageScore());
 
-                for ($i = 0; $i < $filledStars; $i++) { echo "<i class='ph-fill ph-star'></i>" ; } for ($i=0; $i < 5 - $filledStars; $i++) { echo "<i class='ph ph-star'></i>" ; }  ?>
-                    <span class="scorest button-text"><?php echo number_format($movie->getAverageScore(), 1, ".", "") ?></span>
+                for ($i = 0; $i < $filledStars; $i++) {
+                    echo "<i class='ph-fill ph-star'></i>";
+                }
+                for ($i = 0; $i < 5 - $filledStars; $i++) {
+                    echo "<i class='ph ph-star'></i>";
+                }  ?>
+                <span class="scorest button-text"><?php echo number_format($movie->getAverageScore(), 1, ".", "") ?></span>
             </div>
 
             <div class="genres">
@@ -57,22 +62,18 @@ if (!isset($_GET['id'])) {
                 <span class="body-text-small">Família</span>
             </div>
 
-            <a href="filme.php?movieId=<?php echo $movie->getId(); ?>"><button class="button-secondary">
-                    Ver avaliações
-                </button></a>
+            <a class="button button-secondary" href="filme.php?movieId=<?php echo $movie->getId(); ?>">Ver avaliações</a>
         </div>
 
         <div class="best-movies">
             <?php
-            foreach ($system->getMostRatedMovies() as $idmovie => $movie) {
+            foreach ($system->getMostRatedMovies() as $movieId => $movie) {
                 echo "
-                <a href=index.php?id=$idmovie>
-                    <div class='movie-card'>
-                        <i class='ph-fill ph-star'> Top " . $idmovie + 1 . "</i>
-                        <img src='" . makeMoviePoster($movie->getPosterPath()) . "' alt='" . $movie->getTitle() . "'>
-                        <span class='body-text'>" . $movie->getTitle() . "</span>
-                    </div>
-                    
+                <a href=index.php?id=$movieId class='movie-card'>
+                    <i class='ph-fill ph-star'> Top " . $movieId + 1 . "</i>
+                    <img src='" . makeMoviePoster($movie->getPosterPath()) . "' alt='" . $movie->getTitle() . "'>
+                    <span class='body-text'>" . $movie->getTitle() . "</span>
+                </a>
                 ";
             }
             ?>
