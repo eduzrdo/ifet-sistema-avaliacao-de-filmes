@@ -1,0 +1,94 @@
+{
+  "id": "9da9d406-3e48-41bf-8599-2df4918543bd",
+  "version": "2.0",
+  "name": "Login Erro",
+  "url": "http://localhost",
+  "tests": [{
+    "id": "9875689b-a108-4c62-bd0f-a3f6876f5875",
+    "name": "Login Erro",
+    "commands": [{
+      "id": "500c0eff-5c76-4ced-bbbc-3fb45240c2bf",
+      "comment": "",
+      "command": "open",
+      "target": "/ifet-sistema-avaliacao-de-filmes/entrar.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1cd62c7-cae7-4521-9a50-e341431599df",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62e618ea-6eef-4b5a-856d-2997884c1abc",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d98acfb9-5ed8-4a05-8146-c3fd60478cc9",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "benetellijr@gmail.com"
+    }, {
+      "id": "b0a1d447-c2b0-4868-a407-7f9f7a360364",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5bb14ed-4674-4a42-b904-db1b77a1be94",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "16011991"
+    }, {
+      "id": "73c3ab84-d637-4868-93e0-c689dc0aa7a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e22eebb0-4103-4d9d-8364-b8562720d274",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9875689b-a108-4c62-bd0f-a3f6876f5875"]
+  }],
+  "urls": ["http://localhost/"],
+  "plugins": []
+}
