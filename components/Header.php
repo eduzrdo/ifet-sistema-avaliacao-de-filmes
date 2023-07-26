@@ -18,7 +18,7 @@ $isAuthenticated = count($_SESSION) > 0;
     <div class="menu">
       <form action="pesquisar.php" method="get">
         <label class="search-input">
-          <input class="input-text" type="text" name="search" placeholder="Procurar filme">
+          <input class="input-text" type="text" name="search" placeholder="Procurar filme" autocomplete="off">
           <button>
             <i class="ph-bold ph-magnifying-glass"></i>
           </button>
