@@ -72,15 +72,24 @@ form .form-stars {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
+  left: -4.97px;
+}
+
+form .form-stars > span {
+  position: relative;
+  left: 4.97px;
 }
 
 form .score-selection {
   display: flex;
-  gap: 0.75rem;
+  gap: 7px;
 }
 
 form .score-selection label input {
-  display: none;
+  opacity: 0.01;
+  width: 1px;
+  height: 1px;
 }
 
 form .score-selection i {

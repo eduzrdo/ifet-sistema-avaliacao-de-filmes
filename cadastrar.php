@@ -22,10 +22,10 @@
 
   <div>
     <form action="api/user/signup.php" class="login-form" method="post">
-      <input type="email" name="email" class="input-text" placeholder="Informe seu email" required>
-      <input type="text" name="name" class="input-text" placeholder="Seu nome" required>
-      <input type="password" name="password" class="input-text" placeholder="Digite uma senha" required>
-      <input type="password" name="confirmPassword" class="input-text" placeholder="Confirme a senha" required>
+      <input type="email" name="email" class="input-text" placeholder="email@email.com" required maxlength="100">
+      <input type="text" name="name" class="input-text" placeholder="Seu nome" required maxlength="30">
+      <input type="password" name="password" class="input-text" placeholder="Digite uma senha" required minlength="8" maxlength="30" id="password">
+      <input type="password" name="confirmPassword" class="input-text" placeholder="Confirme a senha" required minlength="8" maxlength="30" id="confirmPassword">
 
       <?php
       if (isset($_COOKIE['registerError'])) {
@@ -33,12 +33,30 @@
       }
       ?>
 
-      <button class="button-primary">CADASTRAR</button>
+      <button class="button-primary" onclick="validarSenha()">CADASTRAR</button>
       <span class="text">JÁ POSSUI CADASTRO? <a href="entrar.php">ENTRE AQUI</a></span>
     </form>
   </div>
 
-  <div></div>
+  <script>
+
+    let password = document.getElementById('password');
+    let confirmPassword = document.getElementById('confirmPassword');
+
+    function validarSenha() {
+      if (password.value != confirmPassword.value) {
+        confirmPassword.setCustomValidity("Senhas diferentes!");
+        confirmPassword.reportValidity();
+        return false;
+      } else {
+        confirmPassword.setCustomValidity("");
+        return true;
+      }
+    }
+
+    // verificar também quando o campo for modificado, para que a mensagem suma quando as senhas forem iguais
+    confirmPassword.addEventListener('input', validarSenha);
+  </script>
 </body>
 
 </html>
