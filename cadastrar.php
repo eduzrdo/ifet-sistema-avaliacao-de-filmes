@@ -38,8 +38,9 @@
     </form>
   </div>
 
-  <script>
+  <div></div>
 
+  <script>
     let password = document.getElementById('password');
     let confirmPassword = document.getElementById('confirmPassword');
 
