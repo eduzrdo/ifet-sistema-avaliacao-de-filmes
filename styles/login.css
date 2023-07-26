@@ -46,13 +46,23 @@ body {
   width: 21.875rem;
   padding: 0.75rem;
   border-radius: var(--rounded, 0.5rem);
-  background-color: var(--white);
-  box-shadow: inset 0px 0px 0px 2px var(--primary-dark);
+  background-color: transparent;
+  box-shadow: inset 0px 0px 0px 2px var(--gray-light);
   outline: none;
   border: none;
   transition: box-shadow 150ms;
   text-align: center;
-  color: black;
+  color: var(--primary-lightest);
+  font-weight: 500;
+  /* color: transparent; */
+}
+
+.login-form input::placeholder {
+  color: var(--gray-light);
+}
+
+.login-form input[type=password]:not(:placeholder-shown) {
+  letter-spacing: 7px;
 }
 
 .login-form input:focus {
@@ -71,7 +81,6 @@ body {
 
 a{
   text-decoration: underline; 
-  color: var(--primary-light)
 }
 
 .logo-img {

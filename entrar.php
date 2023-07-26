@@ -22,8 +22,8 @@
 
   <div>
     <form action="api/user/authenticate.php" class="login-form" method="post">
-      <input type="email" name="email" class="input-text" placeholder="Seu email" required maxlength="100">
-      <input type="password" name="password" class="input-text" placeholder="Sua senha" required minlength="8" maxlength="30">
+      <input type="email" name="email" class="input-text" placeholder="Seu email" maxlength="100" required>
+      <input type="password" name="password" class="input-text" placeholder="Sua senha" minlength="8" maxlength="30" required>
 
       <?php
       if (isset($_COOKIE['loginError'])) {

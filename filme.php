@@ -87,7 +87,7 @@ if ($movie[0] === true) {
 
         <div class="score-selection">
           <label>
-            <input type="radio" name="score" value="1" class="star-input" required>
+            <input type="radio" name="score" value="1" class="star-input">
             <i class="ph ph-star"></i>
           </label>
           <label>
@@ -103,7 +103,7 @@ if ($movie[0] === true) {
             <i class="ph ph-star"></i>
           </label>
           <label>
-            <input type="radio" name="score" value="5" class="star-input" id='estrela'>
+            <input type="radio" name="score" value="5" class="star-input" required>
             <i class="ph ph-star"></i>
           </label>
         </div>
@@ -118,7 +118,7 @@ if ($movie[0] === true) {
   </div>
 
   <div class="ratings-container">
-    <h2 class="subtitle">Avaliações</h2>
+    <h2 id="ratings" class="subtitle">Avaliações</h2>
 
     <div class="rating-list">
       <?php
@@ -149,15 +149,6 @@ if ($movie[0] === true) {
   </div>
 
   <script src="scripts/movie.js"></script>
-
-  <script>
-    function verificar() {
-      const input = document.querySelector('input[type=radio]:checked');
-      console.log(input)
-      return false
-    }
-  </script>
-
 </body>
 
 </html>
