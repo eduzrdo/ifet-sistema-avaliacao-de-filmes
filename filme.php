@@ -65,7 +65,11 @@ if ($movie[0] === true) {
           }
         }
         ?>
-        <span class="score button-text"><?php echo number_format($movie->getAverageScore(), 1, ".", "") ?></span>
+        <span class="score button-text"><?php if($movie->getAverageScore() > 0){
+           echo number_format($movie->getAverageScore(), 1, ".", ""); 
+           } else{
+            echo "Sem avaliações";
+           } ?></span>
       </div>
 
       <p class="body-text">
@@ -75,7 +79,7 @@ if ($movie[0] === true) {
   </main>
 
   <div>
-    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
+    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post"  >
       <div class="form-stars">
         <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 
@@ -97,7 +101,7 @@ if ($movie[0] === true) {
             <i class="ph ph-star"></i>
           </label>
           <label>
-            <input type="radio" name="score" value="5" class="star-input">
+            <input type="radio" name="score" value="5" class="star-input" id='estrela'>
             <i class="ph ph-star"></i>
           </label>
         </div>
@@ -107,7 +111,6 @@ if ($movie[0] === true) {
 
       <div class="form-buttons">
         <button class="button-primary">AVALIAR</button>
-        <!-- <button class="button-secondary">APAGAR</button> -->
       </div>
     </form>
   </div>
@@ -133,7 +136,6 @@ if ($movie[0] === true) {
               <p class='body-text'>" . $rating->getComment() . "</p>
             </div>
               ";
-          // <span class='body-text-small date'>05/07/2023 - 09:06</span>
         }
       } else {
         echo "<span class='no-movies'>$message <span onclick='focusCommentField()'>Seja o primeiro! 😁</span></span>";
@@ -141,26 +143,19 @@ if ($movie[0] === true) {
       ?>
 
       <span onclick='focusCommentField()'></span>
-
-      <!-- COMMENT -->
-      <!-- <div class="rating">
-        <div>
-          <h3 class="body-text-bold">Zé das Couve</h3>
-          <div class="rating-score">
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-          </div>
-        </div>
-        <p class="body-text">Com uma trilha sonora arrebatadora e efeitos visuais impressionantes, Interestelar é uma experiência cinematográfica inesquecível que desafia nossa percepção do universo e nos faz refletir sobre o nosso lugar nele.</p>
-        <span class="body-text-small date">05/07/2023 - 09:06</span>
-      </div> -->
     </div>
   </div>
 
   <script src="scripts/movie.js"></script>
+
+  <script>
+    function verificar() {
+      const input = document.querySelector('input[type=radio]:checked');
+      console.log(input)
+      return false
+    }
+  </script>
+
 </body>
 
 </html>
