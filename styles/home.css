@@ -51,6 +51,11 @@ main .movie-data .score {
     gap: 0.625rem;
 }
 
+main .movie-data .score .score-stars {
+    display: flex;
+    gap: 0.625rem;
+}
+
 main .movie-data .score i {
     font-size: 1.5rem;
     color: var(--primary);
@@ -79,6 +84,8 @@ main .best-movies {
 }
 
 .movie-card {
+    all: unset;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,8 +94,10 @@ main .best-movies {
     color: #FFF;
     text-align: center;
     -webkit-transition: -webkit-transform .5s ease;
-    transition: all .2s ease;
+    
+    background-color: transparent;
 
+    cursor: pointer;
 }
 
 .movie-card img {
@@ -98,12 +107,14 @@ main .best-movies {
     aspect-ratio: 1/1.5;
 }
 
-.movie-card:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-    -webkit-filter: drop-shadow(0px 0px 10px rgba(16, 72, 71, 90%));
-    filter: drop-shadow(0px 0px 10px rgba(16, 72, 71, 0.9));
+.movie-card span {
+    transition: color .2s ease;
 }
+
+.movie-card:hover span {
+    color: var(--primary);
+}
+
 .scorest {
     padding: 0.25rem 0.5rem;
     border-radius: 6.25rem;

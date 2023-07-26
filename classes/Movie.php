@@ -8,6 +8,7 @@ class Movie
     private $averageScore = null;
     private $overview;
     private $ratings = [];
+    private
 
     function __construct($id, $title, $posterPath, $backdropPath, $overview)
     {
