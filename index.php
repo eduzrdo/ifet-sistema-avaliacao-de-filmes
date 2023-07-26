@@ -61,11 +61,11 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
                 <span class="scorest button-text"><?php echo number_format($mostRatedMoviesArray[0]["averageScore"], 1, ".", "") ?></span>
             </div>
 
-            <div class="genres">
+            <!-- <div class="genres">
                 <span class="body-text-small">Ficção</span>
                 <span class="body-text-small">Fantasia</span>
                 <span class="body-text-small">Família</span>
-            </div>
+            </div> -->
 
             <a class="button button-secondary movie-link" href="filme.php?movieId=<?php echo $mostRatedMoviesArray[0]["id"]; ?>">Ver avaliações</a>
         </div>

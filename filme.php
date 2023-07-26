@@ -65,11 +65,13 @@ if ($movie[0] === true) {
           }
         }
         ?>
-        <span class="score button-text"><?php if($movie->getAverageScore() > 0){
-           echo number_format($movie->getAverageScore(), 1, ".", ""); 
-           } else{
+        <span class="score button-text">
+          <?php if ($movie->getAverageScore() > 0) {
+            echo number_format($movie->getAverageScore(), 1, ".", "");
+          } else {
             echo "Sem avaliações";
-           } ?></span>
+          } ?>
+        </span>
       </div>
 
       <p class="body-text">
@@ -79,7 +81,7 @@ if ($movie[0] === true) {
   </main>
 
   <div>
-    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post"  >
+    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
       <div class="form-stars">
         <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
 

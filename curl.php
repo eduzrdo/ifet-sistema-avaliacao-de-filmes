@@ -10,7 +10,7 @@ curl_setopt_array($curl, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => [
-    "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYTQ4ZmY3YWE5NmRlYjRlYThmY2YzNTAyZjU0NTU0NiIsInN1YiI6IjYxZDNhNWUwYTIyZDNlMDA2N2IyYzExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aSJXpzlW6gZKBuYMOjCl3Ziy_6WbYz0WiMrSW31xKtQ",
+    "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkODkzMmFmOTIxMGIxMDYwMTVlMGY3MmEwMmU3NzlkMSIsInN1YiI6IjYxZDNhNWUwYTIyZDNlMDA2N2IyYzExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H99HXk-Rk7FtTL56qUkDm7z1nOclfyTBjUmMz1Hzwrw",
     "accept: application/json"
   ],
 ]);
