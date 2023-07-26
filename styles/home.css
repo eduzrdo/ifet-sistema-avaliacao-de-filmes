@@ -85,7 +85,8 @@ main .best-movies {
 
 .movie-card {
     all: unset;
-
+    
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,6 +99,41 @@ main .best-movies {
     background-color: transparent;
 
     cursor: pointer;
+}
+
+.movie-card .movie-card-stars {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+    top: 0;
+    right: 0;
+    translate: 0 -20%;
+    transform: rotate(20deg);
+
+    color: var(--primary);
+
+    animation: stars 1s ease-in-out infinite alternate;
+}
+
+.movie-card .movie-card-stars i:first-child {
+    display: inline-block;
+    transform: rotate(-20deg);
+}
+
+.movie-card .movie-card-stars i:last-child {
+    position: relative;
+    top: 5px;
+
+    display: inline-block;
+    transform: rotate(40deg);
+    transform: scale(0.9);
+}
+
+.movie-card .movie-position {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .movie-card img {
@@ -120,4 +156,14 @@ main .best-movies {
     border-radius: 6.25rem;
     background-color: var(--primary);
     color: var(--primary-darkest);
+}
+
+@keyframes stars {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 10px;
+    }
 }
