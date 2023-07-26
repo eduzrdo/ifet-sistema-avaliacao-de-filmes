@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/login.css">
 
-  <title>Entrar | StarFilms</title>
+  <title>Entrar ⭐ StarFilms</title>
 </head>
 
 <body>
@@ -18,9 +18,7 @@
     <div></div>
   </div>
 
-  <div class="login-img">
-    <img src="./assets/starfilms-logo.svg" alt="">
-  </div>
+  <img class="logo-img" src="./assets/starfilms-logo.svg" alt="Logo StarFilms">
 
   <div>
     <form action="api/user/authenticate.php" class="login-form" method="post">
@@ -39,6 +37,8 @@
       </span>
     </form>
   </div>
+
+  <div></div>
 </body>
 
 </html>

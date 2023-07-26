@@ -6,8 +6,6 @@ require_once 'utils/movie.php';
 
 $system = new System();
 
-session_start();
-
 $movieId = $_GET['movieId'];
 
 $movie = $system->findMovie(intval($movieId));
@@ -31,8 +29,6 @@ if ($movie[0] === true) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/filme.css">

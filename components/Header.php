@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$isAuthenticated = count($_SESSION) > 0;
+?>
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
 <header class="page-header">
   <nav>
     <div class="logo">
@@ -18,12 +25,26 @@
         </label>
       </form>
 
-      <a href="" class="icon-button icon-button">
+      <!-- <a href="" class="icon-button">
         <i class="ph-bold ph-user"></i>
-      </a>
-      <a href="api/user/signout.php" class="icon-button icon-button">
-        <i class="ph-bold ph-sign-out"></i>
-      </a>
+      </a> -->
+      <?php
+      if ($isAuthenticated) {
+        echo "
+        <a href='api/user/signout.php' class='login-button'>
+          <span>Sair</span>
+          <i class='ph-bold ph-sign-out'></i>
+        </a>
+        ";
+      } else {
+        echo "
+        <a href='entrar.php' class='login-button'>
+          <span>Entrar</span>
+          <i class='ph-bold ph-sign-in'></i>
+        </a>
+        ";
+      }
+      ?>
       <!-- <a href="users.php">ACESSAR USUÁRIOS</a> -->
     </div>
   </nav>
