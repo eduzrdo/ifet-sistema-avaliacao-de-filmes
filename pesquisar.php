@@ -38,7 +38,7 @@ if ($success) {
 
 <body class="body">
   <div class="background-plane">
-    <img class="img" src="https://image.tmdb.org/t/p/w300/9Xcg7Ar4ketv4rl8yeK32yp9zQA.jpg">
+    <img class="img" src="https://www.selecoes.com.br/media/uploads/2023/01/filme-2023-herois.png">
     <div></div>
   </div>
 
