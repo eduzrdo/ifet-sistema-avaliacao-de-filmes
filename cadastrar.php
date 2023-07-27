@@ -22,7 +22,7 @@
 
   <div>
     <form action="api/user/signup.php" class="login-form" method="post">
-      <input type="email" name="email" class="input-text" placeholder="email@email.com" required maxlength="100">
+      <input type="email" name="email" class="input-text" placeholder="Informe seu email" required maxlength="100">
       <input type="text" name="name" class="input-text" placeholder="Seu nome" required maxlength="30">
       <input type="password" name="password" class="input-text" placeholder="Digite uma senha" required minlength="8" maxlength="30" id="password">
       <input type="password" name="confirmPassword" class="input-text" placeholder="Confirme a senha" required minlength="8" maxlength="30" id="confirmPassword">

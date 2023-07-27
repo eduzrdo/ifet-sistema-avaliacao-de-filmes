@@ -71,6 +71,11 @@ header.page-header nav .menu .search-input input::placeholder {
   font-weight: 400;
 }
 
+header.page-header nav .menu .search-input input::selection {
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
 header.page-header nav .menu .search-input button {
   all: unset;
   padding: 1rem;

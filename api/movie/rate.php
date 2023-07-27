@@ -33,4 +33,4 @@ if ($movie[0] !== true) {
 $rating = new Rating($userResponse[1], $movie, intval($score), $comment);
 $system->createRating($rating);
 
-header('Location: ../../filme.php?movieId=' . $movieId);
+header('Location: ../../filme.php?movieId=' . $movieId . '#ratings');
