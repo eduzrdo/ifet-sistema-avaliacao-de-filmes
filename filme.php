@@ -4,6 +4,8 @@ require_once 'classes/System.php';
 require_once 'classes/Movie.php';
 require_once 'utils/movie.php';
 
+session_start();
+
 $system = new System();
 
 $movieId = $_GET['movieId'];
@@ -80,74 +82,90 @@ if ($movie[0] === true) {
     </div>
   </main>
 
-  <div>
-    <form action="api/movie/rate.php?movieId=<?php echo $movieId; ?>" method="post">
-      <div class="form-stars">
-        <span class="body-text-bold">Escolha uma nota de 1 a 5</span>
+  <div class="form-container">
+    <?php
+    if (!!$_SESSION) {
+      echo
+      "<form action='api/movie/rate.php?movieId=" . $movieId . "' method='post'>
+          <div class='form-stars'>
+            <span class='body-text-bold'>Escolha uma nota de 1 a 5</span>
+    
+            <div class='score-selection'>
+              <label>
+                <input type='radio' name='score' value='1' class='star-input'>
+                <i class='ph ph-star'></i>
+              </label>
+              <label>
+                <input type='radio' name='score' value='2' class='star-input'>
+                <i class='ph ph-star'></i>
+              </label>
+              <label>
+                <input type='radio' name='score' value='3' class='star-input'>
+                <i class='ph ph-star'></i>
+              </label>
+              <label>
+                <input type='radio' name='score' value='4' class='star-input'>
+                <i class='ph ph-star'></i>
+              </label>
+              <label>
+                <input type='radio' name='score' value='5' class='star-input' required>
+                <i class='ph ph-star'></i>
+              </label>
+            </div>
+          </div>
+    
+          <textarea class='input-text' name='comment' id='' cols='30' rows='5' placeholder='Escreva um avaliação sobre o filme' required></textarea>
+    
+          <div class='form-buttons'>
+            <button class='button-primary'>AVALIAR</button>
+          </div>
+        </form>";
+    }
 
-        <div class="score-selection">
-          <label>
-            <input type="radio" name="score" value="1" class="star-input">
-            <i class="ph ph-star"></i>
-          </label>
-          <label>
-            <input type="radio" name="score" value="2" class="star-input">
-            <i class="ph ph-star"></i>
-          </label>
-          <label>
-            <input type="radio" name="score" value="3" class="star-input">
-            <i class="ph ph-star"></i>
-          </label>
-          <label>
-            <input type="radio" name="score" value="4" class="star-input">
-            <i class="ph ph-star"></i>
-          </label>
-          <label>
-            <input type="radio" name="score" value="5" class="star-input" required>
-            <i class="ph ph-star"></i>
-          </label>
-        </div>
-      </div>
-
-      <textarea class="input-text" name="comment" id="" cols="30" rows="5" placeholder="Escreva um avaliação sobre o filme" required></textarea>
-
-      <div class="form-buttons">
-        <button class="button-primary">AVALIAR</button>
-      </div>
-    </form>
+    if (!$_SESSION) {
+      echo "
+        <span class='log-in-to-rate-message'><a href='entrar.php'>Entre</a> ou <a href='cadastrar.php'>Cadastre-se</a> para avaliar este filme, e ver as avaliações de outros usuários.</span>
+      ";
+    }
+    ?>
   </div>
 
-  <div class="ratings-container">
-    <h2 id="ratings" class="subtitle">Avaliações</h2>
-
-    <div class="rating-list">
-      <?php
-      if ($hasRatings) {
-        foreach ($movie->getRatings() as $rating) {
-          echo "
+  <?php
+  if (!!$_SESSION) {
+    echo "
+        <div class='ratings-container'>
+          <h2 id='ratings' class='subtitle'>Avaliações</h2>
+    
+          <div class='rating-list'>
+      ";
+    if ($hasRatings) {
+      foreach ($movie->getRatings() as $rating) {
+        echo "
             <div class='rating'>
               <div>
                 <h3 class='body-text-bold'>" . $rating->getUser()->getName() . "</h3>
                 <div class='rating-score'>";
-          for ($i = 0; $i < $rating->getScore(); $i++) {
-            echo "<i class='ph-fill ph-star'></i>";
-          }
-          echo
-          "</div>
+        for ($i = 0; $i < $rating->getScore(); $i++) {
+          echo "<i class='ph-fill ph-star'></i>";
+        }
+        echo
+        "</div>
               </div>
               <p class='body-text'>" . $rating->getComment() . "</p>
             </div>
               ";
-        }
-      } else {
-        echo "<span class='no-movies'>$message <span onclick='focusCommentField()'>Seja o primeiro! 😁</span></span>";
       }
-      ?>
+    } else {
+      echo "<span class='no-movies'>$message <span onclick='focusCommentField()'>Seja o primeiro! 😁</span></span>";
+    }
 
-      <span onclick='focusCommentField()'></span>
-    </div>
-  </div>
-
+    echo "
+          <span onclick='focusCommentField()'></span>
+        </div>
+      </div>
+      ";
+  }
+  ?>
   <script src="scripts/movie.js"></script>
 </body>
 

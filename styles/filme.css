@@ -62,6 +62,10 @@ main .movie-info .stars .score {
   color: var(--primary-darkest);
 }
 
+.form-container .log-in-to-rate-message a {
+  font-weight: 700;
+}
+
 form {
   display: flex;
   flex-direction: column;

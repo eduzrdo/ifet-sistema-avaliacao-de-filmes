@@ -2,7 +2,7 @@
   "id": "e08cb55b-c2c4-4ec0-b71e-bc133cd8b0d4",
   "version": "2.0",
   "name": "StarFilms",
-  "url": "http://localhost/ifet-sistema-avaliacao-de-filmes/index.php",
+  "url": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
   "tests": [{
     "id": "cabc2d18-da2c-4d52-95e8-5d5ddde4c316",
     "name": "Cadastrar - sucesso",
@@ -647,6 +647,321 @@
       ],
       "value": "Nenhum filme encontrado."
     }]
+  }, {
+    "id": "9e4baf25-7aae-410d-8d82-fbcab0717be1",
+    "name": "Avaliar - desabilitado",
+    "commands": [{
+      "id": "1d1a287d-21a5-4a45-bbfa-64e8037e7c96",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4eaa75d8-c8ef-4051-ba8a-d13a7d10ed05",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "369ff088-2f3b-4897-9c54-7d74530f0e93",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@starfilms.com"
+    }, {
+      "id": "4592a9ad-e167-4345-86ef-077abbd6572a",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08001868-eab2-4bbb-81e1-1d7ceb5e047c",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "qpwoeiru"
+    }, {
+      "id": "8600756b-dc20-478f-a9bc-641321f2f99b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e3b21e3-1bd8-4b16-a859-b8277086d02c",
+      "comment": "",
+      "command": "click",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ded1da1-51b2-4c9c-8a93-ad8b3644a1a7",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Mulan"
+    }, {
+      "id": "a099c096-ffea-4e2f-a0b1-4a42e5ce36d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ph-magnifying-glass",
+      "targets": [
+        ["css=.ph-magnifying-glass", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b60b662-11e3-4bed-a57c-cef568b474bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.movie-card:nth-child(1) > img",
+      "targets": [
+        ["css=.movie-card:nth-child(1) > img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://image.tmdb.org/t/p/w300/nq4taYpb2PjN1Cwni23GOZJbOaR.jpg')]", "xpath:img"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57f5e587-6cbe-4a27-9242-0d5043ac6c6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-button",
+      "targets": [
+        ["css=.login-button", "css:finder"],
+        ["xpath=//a[contains(@href, 'api/user/signout.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efacd5f9-2185-47df-b77e-2913588a0421",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/filme.php?movieId=10674",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "182c35b5-c833-434d-8f16-bb02f6484b34",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.log-in-to-rate-message",
+      "targets": [
+        ["css=.log-in-to-rate-message", "css:finder"],
+        ["xpath=//div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Entre ou Cadastre-se para avaliar este filme, e ver as avaliações de outros usuários.')]", "xpath:innerText"]
+      ],
+      "value": "Entre ou Cadastre-se para avaliar este filme, e ver as avaliações de outros usuários."
+    }]
+  }, {
+    "id": "8d7aa214-8a57-4303-91ce-2176c48d2e77",
+    "name": "Avaliar - sucesso",
+    "commands": [{
+      "id": "5602054d-58a9-4190-97e0-0a530789db7f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7e7777e-f170-4856-b48d-3d6e636931c9",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8b13c0a-4622-4e3a-a9c1-17b9a710e20a",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@starfilms.com"
+    }, {
+      "id": "486e68e3-6de3-43a6-8af4-a7940f90c002",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "adcae1a1-6c22-40a6-b648-dc1996a61f7c",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "qpwoeiru"
+    }, {
+      "id": "aba4fac4-65cf-471c-9779-ac9daa56cc74",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "361e8685-5571-4ab7-9c38-ac3e400f2587",
+      "comment": "",
+      "command": "click",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4e4d5f9-efde-4e42-8d02-01688abbc5e9",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "O jogo da imitação"
+    }, {
+      "id": "f4826939-0f29-47ee-ab5d-6eb0bf6aa309",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ph-magnifying-glass",
+      "targets": [
+        ["css=.ph-magnifying-glass", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c0508c8-ade8-4105-a558-02f2798fc5da",
+      "comment": "",
+      "command": "click",
+      "target": "css=.movie-card > img",
+      "targets": [
+        ["css=.movie-card > img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://image.tmdb.org/t/p/w300/hC9l38eILMm8FvY4g2rUqxXcs0f.jpg')]", "xpath:img"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0aae701-1e93-469c-ac65-c127aadcd892",
+      "comment": "",
+      "command": "click",
+      "target": "css=label:nth-child(5) > .ph",
+      "targets": [
+        ["css=label:nth-child(5) > .ph", "css:finder"],
+        ["xpath=//label[5]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6378caa-ec8b-4be8-83ba-9d11df577cff",
+      "comment": "",
+      "command": "click",
+      "target": "name=comment",
+      "targets": [
+        ["name=comment", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2131d25b-c236-482f-8051-d1a75e48b479",
+      "comment": "",
+      "command": "type",
+      "target": "name=comment",
+      "targets": [
+        ["name=comment", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "\"O Jogo da Imitação\" é uma obra-prima cinematográfica que combina atuações cativantes, roteiro inteligente e uma história emocionante sobre Alan Turing, um herói esquecido da Segunda Guerra Mundial. Imperdível para os amantes de dramas históricos envolventes."
+    }, {
+      "id": "f4895685-3ee0-44ca-a3dd-ad90824df7ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'AVALIAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecb288f0-61c3-48e2-9ec8-8fb5a21e248d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.body-text:nth-child(2)",
+      "targets": [
+        ["css=.body-text:nth-child(2)", "css:finder"],
+        ["xpath=//div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'\"O Jogo da Imitação\" é uma obra-prima cinematográfica que combina atuações cativantes, roteiro inteligente e uma história emocionante sobre Alan Turing, um herói esquecido da Segunda Guerra Mundial. Imperdível para os amantes de dramas históricos envolventes.')]", "xpath:innerText"]
+      ],
+      "value": "\"O Jogo da Imitação\" é uma obra-prima cinematográfica que combina atuações cativantes, roteiro inteligente e uma história emocionante sobre Alan Turing, um herói esquecido da Segunda Guerra Mundial. Imperdível para os amantes de dramas históricos envolventes."
+    }]
   }],
   "suites": [{
     "id": "c4a71ead-b089-4176-9274-a311d2605eb8",
@@ -669,6 +984,13 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["316ae91c-12fa-4fad-b2df-95b80079c4d2", "269e65ec-d6b5-424d-9582-452d1f00e948"]
+  }, {
+    "id": "66612937-d7ad-4989-80bd-f36671339719",
+    "name": "Avaliar",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8d7aa214-8a57-4303-91ce-2176c48d2e77", "9e4baf25-7aae-410d-8d82-fbcab0717be1"]
   }],
   "urls": ["http://localhost/", "http://localhost/ifet-sistema-avaliacao-de-filmes/cadastrar.php", "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php", "http://localhost/ifet-sistema-avaliacao-de-filmes/index.php"],
   "plugins": []
