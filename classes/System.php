@@ -14,7 +14,8 @@ require_once 'User.php';
 require_once 'Movie.php';
 require_once 'Rating.php';
 
-require_once PATH . 'utils/sort.php';
+// função do arquivo abaixo declarada neste arquivo porque estava dando erro de importação no PHPUnit
+// require_once PATH . 'utils/sort.php';
 
 class System
 {
@@ -193,4 +194,12 @@ class System
       return [true, $data];
     }
   }
+}
+
+function sortMostRatedMoviesArray($a, $b)
+{
+  $aNumberOfRatings = count($a->getRatings());
+  $bNumberOfRatings = count($b->getRatings());
+  if ($aNumberOfRatings === $bNumberOfRatings) return 0;
+  return ($aNumberOfRatings < $bNumberOfRatings) ? 1 : -1;
 }
