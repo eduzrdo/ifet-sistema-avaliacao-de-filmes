@@ -18,5 +18,6 @@ class MovieTest extends TestCase
 
     $this->assertEquals(3.5, $movie->getAverageScore());
     $this->assertEquals(2, count($movie->getRatings()));
+    $this->assertEquals(2, count($user->getRatings()));
   }
 }
