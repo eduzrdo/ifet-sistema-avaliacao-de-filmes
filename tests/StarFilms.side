@@ -310,7 +310,7 @@
         ["xpath=//input[@name='email']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "novousuario@email.com"
+      "value": "admin@starfilms.com"
     }, {
       "id": "2c396431-012e-4e89-a819-893ef64d7473",
       "comment": "",
@@ -334,7 +334,7 @@
         ["xpath=//input[@name='password']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "12345678"
+      "value": "qpwoeiru"
     }, {
       "id": "dba20d80-c150-4a16-8d1d-3e5ac6b5379c",
       "comment": "",
@@ -397,7 +397,7 @@
         ["xpath=//input[@name='email']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "novousuario@email.com"
+      "value": "admin@starfilms.com"
     }, {
       "id": "9f70909e-927f-4892-9484-66d39ab98624",
       "comment": "",
