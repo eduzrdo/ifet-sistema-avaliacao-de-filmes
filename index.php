@@ -12,6 +12,7 @@ function mapper($movie)
         "averageScore" => $movie->getAverageScore(),
         "posterPath" => $movie->getPosterPath(),
         "backdropPath" => $movie->getBackdropPath(),
+        "ratingAmount" => count($movie->getRatings()),
     ];
 }
 
@@ -47,7 +48,7 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
             <h1 class="title"><?php echo $mostRatedMoviesArray[0]["title"]; ?></h1>
 
             <div class="score">
-                <div class="score-stars">
+                <!-- <div class="score-stars">
                     <?php
                     $filledStars = floor($mostRatedMoviesArray[0]["averageScore"]);
 
@@ -57,8 +58,9 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
                     for ($i = 0; $i < 5 - $filledStars; $i++) {
                         echo "<i class='ph ph-star'></i>";
                     }  ?>
-                </div>
-                <span class="scorest button-text"><?php echo number_format($mostRatedMoviesArray[0]["averageScore"], 1, ".", "") ?></span>
+                </div> -->
+                <span class="scorest button-text"><?php echo $mostRatedMoviesArray[0]['ratingAmount'] ?> avaliaç<?php echo $mostRatedMoviesArray[0]['ratingAmount'] > 1 ? 'ões' : 'ão' ?></span>
+                <!-- <span class="scorest button-text"><?php echo number_format($mostRatedMoviesArray[0]["averageScore"], 1, ".", "") ?></span> -->
             </div>
 
             <!-- <div class="genres">
@@ -74,7 +76,7 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
             <?php
             foreach ($mostRatedMoviesArray as $movieIndex => $movie) {
                 echo "
-                <button href=index.php?id=" . $movie['id'] . " class='movie-card' data-backdroppath='" . makeMovieBackdropPath($movie['backdropPath']) . "' data-title='" . $movie['title'] . "' data-id='" . $movie['id'] . "' data-id='" . $movie['id'] . "' data-averageScore='" . $movie['averageScore'] . "''>
+                <button href=index.php?id=" . $movie['id'] . " class='movie-card' data-backdroppath='" . makeMovieBackdropPath($movie['backdropPath']) . "' data-title='" . $movie['title'] . "' data-id='" . $movie['id'] . "' data-id='" . $movie['id'] . "' data-averagescore='" . $movie['averageScore'] . "' data-ratingamount='" . $movie['ratingAmount'] . "'>
                     <div class='movie-card-stars'>";
                 for ($i = 1; $i < 5 - $movieIndex + 1; $i++) {
                     echo "<i class='ph-fill ph-star'></i>";
@@ -92,9 +94,10 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
     <script>
         const movieLinkElement = document.querySelector('.movie-link');
         const titleElement = document.querySelector('.title');
-        const scoreElement = document.querySelector('.scorest');
+        // const scoreElement = document.querySelector('.scorest');
         const backgroundElement = document.querySelector('.background-image');
         const scoreStarsContainer = document.querySelector('.score-stars');
+        const ratingAmountElement = document.querySelector('.scorest');
 
         const filledStar = document.createElement("i");
         filledStar.className = 'ph-fill ph-star';
@@ -104,34 +107,40 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
         function selectMovie(event) {
             const movieId = event.currentTarget.getAttribute('data-id');
             const movieTitle = event.currentTarget.getAttribute('data-title');
-            const movieAverageScore = event.currentTarget.getAttribute('data-averageScore');
+            // const movieAverageScore = event.currentTarget.getAttribute('data-averageScore');
             const movieBackdropPath = event.currentTarget.getAttribute('data-backdroppath');
+            const movieRatingAmount = event.currentTarget.getAttribute('data-ratingamount');
 
             titleElement.innerText = movieTitle;
             backgroundElement.src = movieBackdropPath;
             movieLinkElement.href = 'filme.php?movieId=' + movieId;
-            scoreElement.innerText = Number(movieAverageScore).toFixed(1).replace(',', '.');
+            ratingAmountElement.innerText = movieRatingAmount + ' avaliaç' + (movieRatingAmount > 1 ? 'ões' : 'ão');
 
-            const scoreAbsolute = Math.floor(movieAverageScore);
+            // Insere a nota média
+            // scoreElement.innerText = Number(movieAverageScore).toFixed(1).replace(',', '.');
 
-            let firstStar = scoreStarsContainer.firstElementChild;
+            // const scoreAbsolute = Math.floor(movieAverageScore);
 
-            while (firstStar) {
-                firstStar.remove();
-                firstStar = scoreStarsContainer.firstElementChild;
-            }
+            // let firstStar = scoreStarsContainer.firstElementChild;
 
-            for (let i = 0; i < scoreAbsolute; i++) {
-                const filledStar = document.createElement("i");
-                filledStar.className = 'ph-fill ph-star';
-                scoreStarsContainer.appendChild(filledStar);
-            }
+            // Remove as estrelas
+            // while (firstStar) {
+            //     firstStar.remove();
+            //     firstStar = scoreStarsContainer.firstElementChild;
+            // }
 
-            for (let i = 0; i < 5 - scoreAbsolute; i++) {
-                const emptyStar = document.createElement("i");
-                emptyStar.className = 'ph ph-star';
-                scoreStarsContainer.appendChild(emptyStar);
-            }
+            // Insere as estrelas
+            // for (let i = 0; i < scoreAbsolute; i++) {
+            //     const filledStar = document.createElement("i");
+            //     filledStar.className = 'ph-fill ph-star';
+            //     scoreStarsContainer.appendChild(filledStar);
+            // }
+
+            // for (let i = 0; i < 5 - scoreAbsolute; i++) {
+            //     const emptyStar = document.createElement("i");
+            //     emptyStar.className = 'ph ph-star';
+            //     scoreStarsContainer.appendChild(emptyStar);
+            // }
         }
 
         const buttons = Array.from(document.querySelectorAll('.movie-card'));

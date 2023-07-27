@@ -55,6 +55,8 @@ body {
   color: var(--primary-lightest);
   font-weight: 500;
   /* color: transparent; */
+
+  transition: all 0.3s;
 }
 
 .login-form input::placeholder {
@@ -67,6 +69,7 @@ body {
 
 .login-form input:focus {
   box-shadow: inset 0px 0px 0px 2px var(--primary);
+  background-color: #13636170;
 }
 
 .login-form button {
