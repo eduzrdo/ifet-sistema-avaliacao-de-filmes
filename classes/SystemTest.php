@@ -13,11 +13,9 @@ class SystemTest extends TestCase
   {
     $system = new System();
     $user = new User("Usuário", "user@email.com", "12345678");
-    $system->createUser($user);
+    $result = $system->createUser($user);
 
-    $userInSystem = $system->findUser("user@email.com");
-
-    $this->assertEquals($user->getEmail(), $userInSystem[1]->getEmail());
+    $this->assertEquals(true, $result[0]);
   }
 
   function testFailToCreateUser()
@@ -55,6 +53,8 @@ class SystemTest extends TestCase
 
     $this->assertEquals(2, count($system->getRatings()));
     $this->assertEquals(1, count($system->getMovies()));
+    $this->assertEquals(1, count($system->getMostRatedMovies()));
+    $this->assertLessThanOrEqual(5, count($system->getMostRatedMovies()));
   }
 
   function testFindUser()
@@ -131,7 +131,6 @@ class SystemTest extends TestCase
     $system = new System();
     $result = $system->searchMovie("Harry Potter");
 
-    print($result[1]->results[0]->title);
     $this->assertEquals(true, $result[0]);
   }
 }
