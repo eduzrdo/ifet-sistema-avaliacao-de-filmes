@@ -86,14 +86,14 @@ form .form-stars > span {
 }
 
 form .score-selection {
+  position: relative;
   display: flex;
   gap: 7px;
+  width: fit-content;
 }
 
 form .score-selection label input {
-  opacity: 0.01;
-  width: 1px;
-  height: 1px;
+  display: none;
 }
 
 form .score-selection i {
@@ -175,4 +175,21 @@ form .form-buttons {
 .ratings-container .rating span.date {
   color: var(--white);
   opacity: 0.5;
+}
+
+.rating-error {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  width: max-content;
+
+  opacity: 0;
+
+  transform: translateY(-50%);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--warning);
+
+  transition: opacity 0.3s;
 }

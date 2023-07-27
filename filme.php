@@ -91,6 +91,8 @@ if ($movie[0] === true) {
             <span class='body-text-bold'>Escolha uma nota de 1 a 5</span>
     
             <div class='score-selection'>
+              <span class='rating-error'>Escolha uma nota e escreva um comentário para avaliar.</span>
+
               <label>
                 <input type='radio' name='score' value='1' class='star-input'>
                 <i class='ph ph-star'></i>
@@ -117,7 +119,7 @@ if ($movie[0] === true) {
           <textarea class='input-text' name='comment' id='' cols='30' rows='5' placeholder='Escreva um avaliação sobre o filme' required></textarea>
     
           <div class='form-buttons'>
-            <button class='button-primary'>AVALIAR</button>
+            <button onclick='checkForm()' class='button-primary'>AVALIAR</button>
           </div>
         </form>";
     }
@@ -166,7 +168,17 @@ if ($movie[0] === true) {
       ";
   }
   ?>
+
   <script src="scripts/movie.js"></script>
+  <script>
+    function checkForm() {
+      const stars = Array.from(document.querySelectorAll('input[type=radio]:checked'));
+
+      if (stars.length === 0) {
+        document.querySelector('.rating-error').style = 'opacity: 1';
+      }
+    }
+  </script>
 </body>
 
 </html>
