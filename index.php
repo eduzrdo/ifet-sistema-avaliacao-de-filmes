@@ -75,11 +75,11 @@ $mostRatedMoviesArray = array_map('mapper', $system->getMostRatedMovies());
             foreach ($mostRatedMoviesArray as $movieIndex => $movie) {
                 echo "
                 <button href=index.php?id=" . $movie['id'] . " class='movie-card' data-backdroppath='" . makeMovieBackdropPath($movie['backdropPath']) . "' data-title='" . $movie['title'] . "' data-id='" . $movie['id'] . "' data-id='" . $movie['id'] . "' data-averageScore='" . $movie['averageScore'] . "''>
-                    <div class='movie-card-stars'>
-                        <i class='ph-fill ph-star'></i>
-                        <i class='ph-fill ph-star'></i>
-                    </div>
-                    <span class='movie-position'>Top " . $movieIndex + 1 . "</span>
+                    <div class='movie-card-stars'>";
+                for ($i = 1; $i < 5 - $movieIndex + 1; $i++) {
+                    echo "<i class='ph-fill ph-star'></i>";
+                }
+                echo "</div>
                     <img src='" . makeMoviePoster($movie['posterPath']) . "' alt='" . $movie['title'] . "'>
                     <span class='body-text'>" . $movie['title'] . "</span>
                 </button>

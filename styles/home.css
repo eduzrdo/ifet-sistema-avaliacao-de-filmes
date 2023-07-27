@@ -94,7 +94,7 @@ main .best-movies {
     gap: 0.75rem;
     color: #FFF;
     text-align: center;
-    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
     
     background-color: transparent;
 
@@ -106,28 +106,49 @@ main .best-movies {
     width: 40px;
     height: 40px;
 
-    top: 0;
-    right: 0;
-    translate: 0 -20%;
-    transform: rotate(20deg);
+    top: -30px;
+    right: 10px;
 
     color: var(--primary);
 
-    animation: stars 1s ease-in-out infinite alternate;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
 }
 
-.movie-card .movie-card-stars i:first-child {
-    display: inline-block;
-    transform: rotate(-20deg);
+.movie-card .movie-card-stars i {
+    position: absolute;
+    transform: scale(0.6);
 }
 
-.movie-card .movie-card-stars i:last-child {
-    position: relative;
-    top: 5px;
+.movie-card .movie-card-stars i:nth-child(1) {
+    right: 0;
+    top: 4px;
+    animation: stars 0.8s ease-in-out infinite alternate;
+}
 
-    display: inline-block;
-    transform: rotate(40deg);
-    transform: scale(0.9);
+.movie-card .movie-card-stars i:nth-child(2) {
+    left: 0;
+    top: 0;
+    animation: stars 0.8s 0.2s ease-in-out infinite alternate;
+}
+
+.movie-card .movie-card-stars i:nth-child(3) {
+    left: 12px;
+    top: 9px;
+    animation: stars 0.8s 0.4s ease-in-out infinite alternate;
+}
+
+.movie-card .movie-card-stars i:nth-child(4) {
+    left: 3px;
+    top: 17px;
+    animation: stars 0.8s 0.6s ease-in-out infinite alternate;
+}
+
+.movie-card .movie-card-stars i:nth-child(5) {
+    right: 3px;
+    top: 20px;
+    animation: stars 0.8s 0.8s ease-in-out infinite alternate;
 }
 
 .movie-card .movie-position {
@@ -160,10 +181,10 @@ main .best-movies {
 
 @keyframes stars {
     0% {
-        top: 0;
+        transform: scale(0.6) rotate(-30deg);
     }
 
     100% {
-        top: 10px;
+        transform: scale(0.8) rotate(30deg);
     }
 }
