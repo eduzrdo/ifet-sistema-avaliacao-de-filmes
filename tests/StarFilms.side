@@ -962,6 +962,151 @@
       ],
       "value": "\"O Jogo da Imitação\" é uma obra-prima cinematográfica que combina atuações cativantes, roteiro inteligente e uma história emocionante sobre Alan Turing, um herói esquecido da Segunda Guerra Mundial. Imperdível para os amantes de dramas históricos envolventes."
     }]
+  }, {
+    "id": "f0c6fd9a-3660-47bb-8cbd-1b32e2b683f0",
+    "name": "Avaliação - falha",
+    "commands": [{
+      "id": "811e64f5-f9d7-4afb-b3db-93347f3024fe",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3755eb20-18f5-49a5-9790-470890435b5a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x736",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9914a587-a935-48cc-8482-9f9032e956c1",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37d89ce9-71d0-4c0e-a8cd-304915015a5d",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input-text:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@starfilms.com"
+    }, {
+      "id": "312edb33-c0ef-4151-80ec-ecef8a07310e",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "484f6e2e-8250-43c8-be70-aaee2fc98ac0",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-text:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "qpwoeiru"
+    }, {
+      "id": "70aa01e1-6e1f-44fe-9d50-955f0eb67df5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ENTRAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e2d65e6-39cc-4c44-bd42-1c8d289b0258",
+      "comment": "",
+      "command": "click",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31561fda-cbb5-429f-9576-ee62e2d978f5",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.input-text", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "O Código Da Vinci"
+    }, {
+      "id": "949f973a-fd34-490d-888d-41155104fb7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ph-magnifying-glass",
+      "targets": [
+        ["css=.ph-magnifying-glass", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f894a95-4135-4dc5-8833-c2cf237136f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.movie-card:nth-child(1) > img",
+      "targets": [
+        ["css=.movie-card:nth-child(1) > img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://image.tmdb.org/t/p/w300/feyfwGwJOdUAAqjTP3vXJmSesAt.jpg')]", "xpath:img"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8ea7cb8-5a14-4ebb-a635-3ab68cbaedf0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-primary",
+      "targets": [
+        ["css=.button-primary", "css:finder"],
+        ["xpath=//button[@onclick='checkForm()']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'AVALIAR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e973c072-2980-4ba6-ab48-164c88f94682",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.rating-error",
+      "targets": [
+        ["css=.rating-error", "css:finder"],
+        ["xpath=//form/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Escolha uma nota e escreva um comentário para avaliar.')]", "xpath:innerText"]
+      ],
+      "value": "Escolha uma nota e escreva um comentário para avaliar."
+    }]
   }],
   "suites": [{
     "id": "c4a71ead-b089-4176-9274-a311d2605eb8",
@@ -990,7 +1135,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["8d7aa214-8a57-4303-91ce-2176c48d2e77", "9e4baf25-7aae-410d-8d82-fbcab0717be1"]
+    "tests": ["8d7aa214-8a57-4303-91ce-2176c48d2e77", "9e4baf25-7aae-410d-8d82-fbcab0717be1", "f0c6fd9a-3660-47bb-8cbd-1b32e2b683f0"]
   }],
   "urls": ["http://localhost/", "http://localhost/ifet-sistema-avaliacao-de-filmes/cadastrar.php", "http://localhost/ifet-sistema-avaliacao-de-filmes/entrar.php", "http://localhost/ifet-sistema-avaliacao-de-filmes/index.php"],
   "plugins": []
