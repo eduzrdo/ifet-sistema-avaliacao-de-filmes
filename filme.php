@@ -4,7 +4,7 @@ require_once 'classes/System.php';
 require_once 'classes/Movie.php';
 require_once 'utils/movie.php';
 
-session_start();
+// session_start();
 
 $system = new System();
 
