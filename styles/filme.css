@@ -162,6 +162,11 @@ form .form-buttons {
   color: var(--primary);
 }
 
+.ratings-container .rating a {
+  padding: 3px;
+  margin-left: auto;
+}
+
 .ratings-container .rating .rating-score {
   display: flex;
   gap: 0.25rem;

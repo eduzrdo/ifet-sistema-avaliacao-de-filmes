@@ -47,6 +47,10 @@ if ($movie[0] === true) {
 
   <?php require_once 'components/Header.php' ?>
 
+  <?php
+    $userId = $_SESSION['userId'];
+  ?>
+
   <main>
     <img src="<?php echo makeMoviePoster($movie->getPosterPath()); ?>" alt="Poster de Interestelar">
 
@@ -151,8 +155,10 @@ if ($movie[0] === true) {
           echo "<i class='ph-fill ph-star'></i>";
         }
         echo
-        "</div>
-              </div>
+        "
+          </div>
+          "; echo $userId == $rating->getUser()->getId() ? "<a href='api/rating/delete.php?ratingId=" . $rating->getId() . "&movieId=" . $movieId . "'><i class='ph ph-trash'></i></a>" : '';
+              echo "</div>
               <p class='body-text'>" . $rating->getComment() . "</p>
             </div>
               ";

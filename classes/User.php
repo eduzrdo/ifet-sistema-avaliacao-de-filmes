@@ -50,4 +50,12 @@ class User
   {
     array_unshift($this->ratings, $rating);
   }
+
+  function deleteRating($ratingId) {
+    foreach ($this->ratings as $deleteIndex => $rating) {
+        if ($rating->getId() == $ratingId) {
+          unset($this->ratings[$deleteIndex]);
+        }
+    }
+}
 }

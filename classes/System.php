@@ -117,8 +117,23 @@ class System
     $this->mostRatedMovies = $newMostRatedMovies;
   }
 
-  public function deleteRating($ratingId)
-  {
+  public function deleteRating($ratingId) {
+    // $deleteIndex = null;
+
+    foreach ($this->ratings as $deleteIndex => $rating) {
+      if ($rating->getId() == $ratingId) {
+        // $deleteIndex = $rating->getId();
+
+        $rating->getMovie()->deleteRating($ratingId);
+        $rating->getUser()->deleteRating($ratingId);
+        unset($this->ratings[$deleteIndex]);
+        usort($this->mostRatedMovies, "sortMostRatedMoviesArray");
+      }
+    }
+
+    // if ($deleteIndex) {
+    //   unset($this->ratings[$deleteIndex]);
+    // }
   }
 
   public function findUser($email)

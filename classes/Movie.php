@@ -66,4 +66,12 @@ class Movie
         $averageScore = $sum / count($this->ratings);
         $this->averageScore = $averageScore;
     }
+
+    function deleteRating($ratingId) {
+        foreach ($this->ratings as $deleteIndex => $rating) {
+            if ($rating->getId() == $ratingId) {
+                unset($this->ratings[$deleteIndex]);
+            }
+        }
+    }
 }
