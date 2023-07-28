@@ -48,7 +48,10 @@ if ($movie[0] === true) {
   <?php require_once 'components/Header.php' ?>
 
   <?php
-    $userId = $_SESSION['userId'];
+    $userId = null;
+    if (isset($_SESSION['userId'])) {
+      $userId = $_SESSION['userId'];
+    }
   ?>
 
   <main>
